@@ -6,7 +6,7 @@ import Image from "next/image";
 const ContactPage = () => {
   return (
     <div className="max-w-3xl mx-auto p-8 text-center text-gray-900">
-      <h2 className="lg:text-7xl md:text-5xl font-bold tracking-wide mb-3">CONTACTS</h2>
+      <h2 className="text-3xl lg:text-7xl font-bold tracking-wide mb-3">CONTACTS</h2>
 
       <div className="flex flex-col items-center md:flex-row md:items-center md:justify-center gap-8">
         <div

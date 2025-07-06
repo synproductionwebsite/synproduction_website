@@ -15,7 +15,7 @@ const CorePage = () => {
         </p>
       </div>
       <div className="my-20">
-        <h2 className="lg:text-7xl md:text-5xl mb-3">L&apos;ÉVÉNEMENTIEL</h2>
+        <h2 className="text-3xl lg:text-7xl mb-3">L&apos;ÉVÉNEMENTIEL</h2>
        <p className="font-mono lg:ml-15 text-justify ">
         Nous mettons nos compétences en gestion de projets au service de la création d&apos;événements artistiques : représentations, festivals ou actions culturelles pour artistes, collectifs, associations ou médias culturels.
         Nous concrétisons la vision d&apos;autrui à travers des productions originales et immersives, en assurant un accompagnement complet de la conception à la réalisation.
@@ -23,7 +23,7 @@ const CorePage = () => {
        </p>
       </div>
       <div className="mb-20">
-        <h2 className="lg:text-7xl md:text-5xl text-right mb-3">L&apos;ACCOMPAGNEMENT</h2>
+        <h2 className="text-right mb-3 text-3xl lg:text-7xl">L&apos;ACCOMPAGNEMENT</h2>
         <p className="font-mono lg:mr-15 text-justify ">
           Nous accompagnons les artistes émergents dans la structuration de leur projet artistique, en croisant diffusion, promotion et production.
           Ensemble, nous définissons une base solide et une stratégie de diffusion (live, communication, esthétique, représentation). Nous aidons aussi aux démarches administratives et à la constitution d&apos;un réseau.
@@ -32,7 +32,7 @@ const CorePage = () => {
         </p>
       </div>
       <div className="lg:flex">
-        <h2 className="lg:text-7xl md:text-5xl mb-3">LA MÉDUATION CULRURELLE</h2>
+        <h2 className="text-3xl lg:text-7xl mb-3">LA MÉDUATION CULRURELLE</h2>
         <p className="font-mono text-justify lg:ml-10">
           Nous développons un cycle d&apos;ateliers et de rencontres autour du processus créatif et de la conception de projets culturels.
           Quatre cycles pour explorer les étapes de la création, de l&apos;inspiration à la narration. Ces ateliers sont ouverts à toutes celles et ceux qui souhaitent explorer leur imaginaire.

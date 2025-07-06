@@ -26,18 +26,16 @@ const Navbar = forwardRef<HTMLElement, NavbarProps>(({ className, onContactClick
   return (
     <nav
       ref={ref}
-      className={`text-white flex items-center justify-between fixed top-0 px-4 py-2 z-50 w-full ${className}`}
+      className={`text-white flex items-center justify-between fixed top-0 px-4 py-2 z-50 w-full backdrop-blur-md shadow-lg ${className}`}
       style={{ backgroundColor: "rgba(44, 93, 50, 0.6)" }}
     >
       {/* Logo centré */}
-      <div className="absolute left-1/2 top-2.5 transform -translate-x-1/2 cursor-pointer">
+      <div className="absolute left-1/2 top-3.5 transform -translate-x-1/2 cursor-pointer">
         <Image
           src="/img/logo/logo.png"
           alt="SYN logo"
-          width={scrolled ? 48 : 80}
-          height={scrolled ? 48 : 80}
-          className="transition-all duration-300 origin-top"
-          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          width={80}
+          height={80}
           priority // optionnel, logo important à charger vite
         />
       </div>
