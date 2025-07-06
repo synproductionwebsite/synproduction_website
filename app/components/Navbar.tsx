@@ -71,7 +71,7 @@ const Navbar = forwardRef<HTMLElement, NavbarProps>(({ className, onContactClick
       </div>
 
       {/* Logo centré */}
-      <div className="absolute left-1/2 top-1 transform -translate-x-1/2 cursor-pointer">
+      <div className="absolute left-1/2 top-0.5 transform -translate-x-1/2 cursor-pointer">
         <Image
           src="/img/logo/logo.png"
           alt="SYN logo"

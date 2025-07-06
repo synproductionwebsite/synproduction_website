@@ -33,7 +33,7 @@ const HomePage: React.FC = () => {
 
   useEffect(() => {
     const checkWindowSize = () => {
-      setIsSmallScreen(window.innerWidth < 1250);
+      setIsSmallScreen(window.innerWidth < 800);
     };
 
     window.addEventListener("resize", checkWindowSize);

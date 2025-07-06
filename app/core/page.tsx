@@ -15,25 +15,25 @@ const CorePage = () => {
         </p>
       </div>
       <div className="my-20">
-        <h2 className="text-7xl mb-3">L&apos;ÉVÉNEMENTIEL</h2>
-       <p className="font-mono ml-15 text-justify ">
+        <h2 className="lg:text-7xl md:text-3xl mb-3">L&apos;ÉVÉNEMENTIEL</h2>
+       <p className="font-mono lg:ml-15 text-justify ">
         Nous mettons nos compétences en gestion de projets au service de la création d&apos;événements artistiques : représentations, festivals ou actions culturelles pour artistes, collectifs, associations ou médias culturels.
         Nous concrétisons la vision d&apos;autrui à travers des productions originales et immersives, en assurant un accompagnement complet de la conception à la réalisation.
         Nous produisons aussi nos propres événements sous le nom de SYN Production, pour valoriser les artistes avec qui nous collaborons, dans un esprit fidèle à nos valeurs.
        </p>
       </div>
       <div className="mb-20">
-        <h2 className="text-7xl text-right mb-3">L&apos;ACCOMPAGNEMENT</h2>
-        <p className="font-mono mr-15 text-justify ">
+        <h2 className="lg:text-7xl md:text-3xl text-right mb-3">L&apos;ACCOMPAGNEMENT</h2>
+        <p className="font-mono lg:mr-15 text-justify ">
           Nous accompagnons les artistes émergents dans la structuration de leur projet artistique, en croisant diffusion, promotion et production.
           Ensemble, nous définissons une base solide et une stratégie de diffusion (live, communication, esthétique, représentation). Nous aidons aussi aux démarches administratives et à la constitution d&apos;un réseau.
           Spécialisés en diffusion, nous souhaitons tisser des liens avec labels, éditeurs et structures indépendantes.
           En parallèle, nous proposerons des sessions de conseil ponctuelles, ouvertes aux artistes semi-pros et structures culturelles.
         </p>
       </div>
-      <div className="flex">
-        <h2 className="text-7xl">LA MÉDUATION CULRURELLE</h2>
-        <p className="font-mono text-justify ml-10">
+      <div className="lg:flex">
+        <h2 className="lg:text-7xl md:text-3xl">LA MÉDUATION CULRURELLE</h2>
+        <p className="font-mono text-justify lg:ml-10">
           Nous développons un cycle d&apos;ateliers et de rencontres autour du processus créatif et de la conception de projets culturels.
           Quatre cycles pour explorer les étapes de la création, de l&apos;inspiration à la narration. Ces ateliers sont ouverts à toutes celles et ceux qui souhaitent explorer leur imaginaire.
           Chaque cycle propose une approche transversale des arts, mêlant différentes pratiques pour révéler le potentiel de passage entre les disciplines.
