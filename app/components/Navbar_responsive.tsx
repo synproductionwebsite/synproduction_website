@@ -9,16 +9,10 @@ interface NavbarProps {
 }
 
 const Navbar = forwardRef<HTMLElement, NavbarProps>(({ className, onContactClick }, ref) => {
-  const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    
   }, []);
 
   const closeMenu = () => setMenuOpen(false);
@@ -36,7 +30,7 @@ const Navbar = forwardRef<HTMLElement, NavbarProps>(({ className, onContactClick
           alt="SYN logo"
           width={80}
           height={80}
-          priority // optionnel, logo important à charger vite
+          priority
         />
       </div>
 
