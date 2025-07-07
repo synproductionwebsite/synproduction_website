@@ -32,7 +32,7 @@ const CorePage = () => {
         </p>
       </div>
       <div className="lg:flex">
-        <h2 className="text-3xl lg:text-7xl mb-3">LA MÉDUATION CULRURELLE</h2>
+        <h2 className="text-3xl lg:text-7xl mb-3">LA MÉDIATION CULTURELLE</h2>
         <p className="font-mono text-justify lg:ml-10">
           Nous développons un cycle d&apos;ateliers et de rencontres autour du processus créatif et de la conception de projets culturels.
           Quatre cycles pour explorer les étapes de la création, de l&apos;inspiration à la narration. Ces ateliers sont ouverts à toutes celles et ceux qui souhaitent explorer leur imaginaire.

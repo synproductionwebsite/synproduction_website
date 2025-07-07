@@ -14,60 +14,59 @@ const Navbar = forwardRef<HTMLElement, NavbarProps>(({ className, onContactClick
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
+      setScrolled(window.scrollY > 50);
     };
 
     window.addEventListener('scroll', handleScroll);
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   return (
-    
     <nav
       ref={ref}
-      className={`text-white flex items-center justify-between fixed top-0 px-5 z-50 
-         backdrop-blur-md shadow-lg 
-        ${className} h-[60px]`}
-      style={{ backgroundColor: "rgba(44, 93, 50, 0.6)" }}
-
+      className={`text-white flex items-center justify-between fixed top-0 w-full h-[60px] px-5 z-50 backdrop-blur-md shadow-lg ${className}`}
+      // style={{ backgroundColor: "rgba(44, 93, 50, 0.6)" }}
     >
-      <h1 style={{ position: "absolute", left: "-9999px", top: "-9999px", width: "1px", height: "1px", overflow: "hidden" }}>amantique</h1>
-      {/* Conteneur pour les icônes sociaux */}
-      <div className="flex items-center justify-between space-x-3">
-        
+      {/* Image de fond */}
+      <div className="absolute inset-0 -z-10">
+        <Image
+          src="/img/bg/navbar_bg.png" // Remplace avec ton image
+          alt="Navbar Background"
+          layout="fill"
+          objectFit="cover"
+          priority
+          className="opacity-100"
+        />
+      </div>
 
+      {/* Accessibilité */}
+      <h1 style={{ position: "absolute", left: "-9999px", top: "-9999px", width: "1px", height: "1px", overflow: "hidden" }}>amantique</h1>
+
+      {/* Icônes sociaux */}
+      <div className="flex items-center space-x-3">
         {/* Instagram */}
-        <a href="https://www.instagram.com/synproduction?igsh=MTkyNzdwZjRvZnh6NQ%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" className="transition-transform transform hover:scale-150">
-          <Image src="/img/icon/instagram_white.png" alt="Instagram Icon" width={30} height={30} className="rounded-md transition-opacity duration-300" />
-          <Image src="/img/icon/instagram_purple.png" alt="Instagram Icon Hover" width={30} height={30} className="absolute top-0 left-0 rounded-md opacity-0 transition-opacity duration-300 hover:opacity-100" />
+        <a href="https://www.instagram.com/synproduction?igsh=MTkyNzdwZjRvZnh6NQ%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" className="relative transition-transform transform hover:scale-150">
+          <Image src="/img/icon/instagram_green.png" alt="Instagram" width={30} height={30} className="rounded-md" />
+          <Image src="/img/icon/instagram_purple.png" alt="Instagram Hover" width={30} height={30} className="absolute top-0 left-0 rounded-md opacity-0 hover:opacity-100 transition-opacity duration-300" />
         </a>
 
-
         {/* TikTok */}
-        <a href="https://www.tiktok.com/@syn.production?_t=ZN-8xhQ0wpdRCA&_r=1" target="_blank" rel="noopener noreferrer" className="transition-transform transform hover:scale-150">
-          <Image src="/img/icon/tiktok_white.png" alt="TikTok Icon" width={30} height={30} className="rounded-md transition-opacity duration-300" />
-          <Image src="/img/icon/tiktok_purple.png" alt="TikTok Icon Hover" width={30} height={30} className="absolute top-0 left-0 rounded-md opacity-0 transition-opacity duration-300 hover:opacity-100" />
+        <a href="https://www.tiktok.com/@syn.production?_t=ZN-8xhQ0wpdRCA&_r=1" target="_blank" rel="noopener noreferrer" className="relative transition-transform transform hover:scale-150">
+          <Image src="/img/icon/tiktok_green.png" alt="TikTok" width={30} height={30} className="rounded-md" />
+          <Image src="/img/icon/tiktok_purple.png" alt="TikTok Hover" width={30} height={30} className="absolute top-0 left-0 rounded-md opacity-0 hover:opacity-100 transition-opacity duration-300" />
         </a>
 
         {/* LinkedIn */}
-        <a href="https://www.linkedin.com/company/syn-production/" target="_blank" rel="noopener noreferrer" className="transition-transform transform hover:scale-150">
-          <Image src="/img/icon/linkedin_white.png" alt="LinkedIn Icon" width={30} height={30} className="rounded-md transition-opacity duration-300" />
-          <Image src="/img/icon/linkedin_purple.png" alt="LinkeIn Icon Hover" width={30} height={30} className="absolute top-0 left-0 rounded-md opacity-0 transition-opacity duration-300 hover:opacity-100" />
+        <a href="https://www.linkedin.com/company/syn-production/" target="_blank" rel="noopener noreferrer" className="relative transition-transform transform hover:scale-150">
+          <Image src="/img/icon/linkedin_green.png" alt="LinkedIn" width={30} height={30} className="rounded-md" />
+          <Image src="/img/icon/linkedin_purple.png" alt="LinkedIn Hover" width={30} height={30} className="absolute top-0 left-0 rounded-md opacity-0 hover:opacity-100 transition-opacity duration-300" />
         </a>
 
         {/* Facebook */}
-        <a href="https://www.facebook.com/profile.php?id=61566561786488" target="_blank" rel="noopener noreferrer" className="transition-transform transform hover:scale-150">
-          <Image src="/img/icon/facebook_white.png" alt="Facebook Icon" width={30} height={30} className="rounded-md transition-opacity duration-300" />
-          <Image src="/img/icon/facebook_purple.png" alt="Facebook Icon Hover" width={30} height={30} className="absolute top-0 left-0 rounded-md opacity-0 transition-opacity duration-300 hover:opacity-100" />
+        <a href="https://www.facebook.com/profile.php?id=61566561786488" target="_blank" rel="noopener noreferrer" className="relative transition-transform transform hover:scale-150">
+          <Image src="/img/icon/facebook_green.png" alt="Facebook" width={30} height={30} className="rounded-md" />
+          <Image src="/img/icon/facebook_purple.png" alt="Facebook Hover" width={30} height={30} className="absolute top-0 left-0 rounded-md opacity-0 hover:opacity-100 transition-opacity duration-300" />
         </a>
-
       </div>
 
       {/* Logo centré */}
@@ -75,24 +74,22 @@ const Navbar = forwardRef<HTMLElement, NavbarProps>(({ className, onContactClick
         <Image
           src="/img/logo/logo.png"
           alt="SYN logo"
-          width={scrolled ? 168 : 280}  // 12*4 = 48px, 20*4=80px (taille en px, car Tailwind h-12 = 3rem = 48px)
-          height={scrolled ? 48 : 80}
+          width={scrolled ? 168 : 480}
+          height={scrolled ? 48 : 160}
           className="transition-all duration-300 origin-top"
-          onClick={() => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-          }}
+          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
         />
       </div>
 
-      {/* Liens de navigation */}
-      <div className="text-2xl flex items-center justify-between space-x-3">
+      {/* Liens navigation */}
+      <div className="text-2xl flex items-center space-x-3">
         <a
           href="#"
           onClick={(e) => {
             e.preventDefault();
             onContactClick?.();
           }}
-          className="px-1 hover:text-[#675A95] transition-colors-transform duration-300 rounded-md hover:scale-120"
+          className="px-1 hover:text-[#675A95] transition-transform duration-300 hover:scale-110"
         >
           CONTACTS
         </a>
@@ -101,7 +98,5 @@ const Navbar = forwardRef<HTMLElement, NavbarProps>(({ className, onContactClick
   );
 });
 
-// Définir le displayName pour faciliter le débogage
 Navbar.displayName = 'Navbar';
-
 export default Navbar;

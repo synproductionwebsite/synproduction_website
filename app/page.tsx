@@ -90,7 +90,7 @@ const HomePage: React.FC = () => {
         )}
 
         {/* Sections */}
-        <div className="mt-10">
+        <div className="mt-25">
           <CorePage />
         </div>
 
