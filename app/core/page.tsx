@@ -5,6 +5,7 @@ import React from "react";
 const CorePage = () => {
   return (
     <>
+    <h1>DEV</h1>
     <div className="text-[#1F1F1F] max-w-5xl mx-auto p-6">
       <div className="">
         <p className="bg-customPurple1 rounded-4xl font-mono text-justify">
