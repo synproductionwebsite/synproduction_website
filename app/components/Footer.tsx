@@ -3,7 +3,7 @@
 export default function Footer() {
   return (
     <footer
-      className="relative text-white py-4 bg-[url('/img/bg/footer_bg.png')] bg-cover bg-center"
+      className="relative text-white py-4 bg-[url('/img/bg/footer_bg_green.png')] bg-cover bg-center"
     >
       {/* Overlay semi-transparent */}
       <div className="absolute inset-0 bg-black/20 shadow-lg"></div>

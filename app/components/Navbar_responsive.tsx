@@ -21,19 +21,19 @@ const Navbar = forwardRef<HTMLElement, NavbarProps>(({ className, onContactClick
     <nav
       ref={ref}
       className={`fixed top-0 left-0 w-full z-50 px-4 py-2 text-white backdrop-blur-md shadow-lg ${className}`}
-    //   style={{ backgroundColor: "rgba(44, 93, 50, 0.6)" }}
+      style={{ backgroundColor: "rgba(44, 93, 50, 0.6)" }}
     >
       {/* Image de fond transparente */}
-      <div className="absolute inset-0 z-0">
+      {/* <div className="absolute inset-0 z-0">
         <Image
-          src="/img/bg/navbar_bg.png" // Remplace par ton chemin d'image
+          src="/img/bg/navbar_bg.png"
           alt="Navbar Background"
           layout="fill"
           objectFit="cover"
           priority
           className="opacity-100"
         />
-      </div>
+      </div> */}
 
       {/* Contenu de la Navbar */}
       <div className="relative z-10 flex items-center justify-between w-full">
@@ -52,7 +52,7 @@ const Navbar = forwardRef<HTMLElement, NavbarProps>(({ className, onContactClick
         <div className="block lg:hidden">
           <button
             onClick={() => setMenuOpen(!menuOpen)}
-            className="text-[#2C5D32] text-3xl"
+            className="text-white text-3xl"
             aria-label={menuOpen ? "Fermer le menu" : "Ouvrir le menu"}
           >
             {menuOpen ? '×' : '☰'}
@@ -62,7 +62,7 @@ const Navbar = forwardRef<HTMLElement, NavbarProps>(({ className, onContactClick
         {/* Navigation mobile */}
         {menuOpen && (
           <div
-            className="lg:hidden absolute top-[52px] left-0 w-full text-white p-4 flex flex-col space-y-4"
+            className="lg:hidden absolute top-[50px] left-0 w-full text-white p-2 flex flex-col space-y-4"
             style={{ backgroundColor: "rgba(44, 93, 50, 0.6)" }}
           >
             <a
