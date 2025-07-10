@@ -7,12 +7,14 @@ import Navbar_Responsive from "./components/Navbar_responsive";
 import CorePage from "./core/page";
 import ContactPage from "./contact/page";
 import Footer from "./components/Footer";
+import RosterPage from "./roster/page";
 
 const HomePage: React.FC = () => {
   const [isSmallScreen, setIsSmallScreen] = useState(false);
   const navbarRef = useRef<HTMLElement>(null);
 
   const contactPageRef = useRef<HTMLDivElement>(null);
+  const rosterPageRef = useRef<HTMLDivElement>(null);
 
   const getNavbarHeight = () =>
     navbarRef.current ? navbarRef.current.offsetHeight : 0;
@@ -80,18 +82,24 @@ const HomePage: React.FC = () => {
             ref={navbarRef}
             className="sticky top-0 z-50"
             onContactClick={() => scrollToSection(contactPageRef)}
+            onRosterClick={() => scrollToSection(rosterPageRef)}
           />
         ) : (
           <Navbar
             ref={navbarRef}
             className="sticky top-0 z-50"
             onContactClick={() => scrollToSection(contactPageRef)}
+            onRosterClick={() => scrollToSection(rosterPageRef)}
           />
         )}
 
         {/* Sections */}
         <div className="mt-25">
           <CorePage />
+        </div>
+
+        <div ref={rosterPageRef}>
+          <RosterPage />
         </div>
 
         <div ref={contactPageRef}>

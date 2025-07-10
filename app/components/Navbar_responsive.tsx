@@ -6,9 +6,10 @@ import Image from 'next/image';
 interface NavbarProps {
   className?: string;
   onContactClick?: () => void;
+  onRosterClick?: () => void;
 }
 
-const Navbar = forwardRef<HTMLElement, NavbarProps>(({ className, onContactClick }, ref) => {
+const Navbar = forwardRef<HTMLElement, NavbarProps>(({ className, onContactClick, onRosterClick }, ref) => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
@@ -65,6 +66,17 @@ const Navbar = forwardRef<HTMLElement, NavbarProps>(({ className, onContactClick
             className="lg:hidden absolute top-[50px] left-0 w-full text-white p-2 flex flex-col space-y-4"
             style={{ backgroundColor: "rgba(44, 93, 50, 0.6)" }}
           >
+            <a
+              href="#"
+              onClick={(e) => {
+                e.preventDefault();
+                onRosterClick?.();
+                closeMenu();
+              }}
+              className="hover:text-[#734A93] transition-colors duration-300"
+            >
+              ROSTER
+            </a>
             <a
               href="#"
               onClick={(e) => {

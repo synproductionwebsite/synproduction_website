@@ -6,10 +6,11 @@ import Image from 'next/image';
 interface NavbarProps {
   className?: string;
   onContactClick?: () => void;
+  onRosterClick?: () => void;
 }
 
 // Définition du composant Navbar avec forwardRef
-const Navbar = forwardRef<HTMLElement, NavbarProps>(({ className, onContactClick }, ref) => {
+const Navbar = forwardRef<HTMLElement, NavbarProps>(({ className, onContactClick, onRosterClick }, ref) => {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -83,6 +84,16 @@ const Navbar = forwardRef<HTMLElement, NavbarProps>(({ className, onContactClick
 
       {/* Liens navigation */}
       <div className="text-2xl flex items-center space-x-3">
+        <a
+          href="#"
+          onClick={(e) => {
+            e.preventDefault();
+            onRosterClick?.();
+          }}
+          className="px-1 hover:text-[#675A95] transition-transform duration-300 hover:scale-110"
+        >
+          ROSTER
+        </a>
         <a
           href="#"
           onClick={(e) => {
