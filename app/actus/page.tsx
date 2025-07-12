@@ -70,8 +70,8 @@ const articles: Article[] = [
 ]
 
 const CARD_WIDTH = 450
-const CARD_GAP = 20
-const SIDE_PADDING = 150
+const CARD_GAP = 40
+const SIDE_PADDING = 120
 
 export default function ActusPage() {
   const [currentIndex, setCurrentIndex] = useState(Math.floor(articles.length / 2))
@@ -113,7 +113,7 @@ export default function ActusPage() {
   }
 
   return (
-    <div className="relative w-full bg-gradient-to-r from-[#685A96] via-[#685A96] to-[#2c5d32] flex flex-col items-center justify-center p-8">
+    <div className="relative w-full bg-gradient-to-r from-[#685A96] via-[#685A96] to-[#2c5d32] flex flex-col items-center justify-center py-8">
       <h2 className="text-5xl font-extrabold mb-5 text-white select-none">ACTUS</h2>
 
       {/* Carrousel */}
@@ -145,7 +145,7 @@ export default function ActusPage() {
             >
               <div className="flex flex-row h-full">
                 {/* Image à gauche */}
-                <div className="relative w-[40%] min-h-[200px]">
+                <div className="relative w-[40%] min-h-[400px]">
                   <Image
                     src={article.imageUrl}
                     alt={article.title}

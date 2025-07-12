@@ -66,6 +66,16 @@ const HomePage: React.FC = () => {
         // style={{ backgroundImage: 'url("/img/bg/main_bg.jpeg")' }}
       />
 
+      {/* Bandeau défilant en arrière-plan */}
+      <div
+        className="absolute top-0 left-0 w-full h-full bg-repeat z-0 opacity-10"
+        style={{
+          backgroundImage: "url('/img/logo/logo_green.png')",
+          backgroundSize: "auto 200px",
+          backgroundPosition: "0 0",
+        }}
+      />
+
       {/* ✅ Contenu principal */}
       <div className="relative w-full min-h-screen">
         <h1

@@ -5,15 +5,6 @@ import React from "react";
 const CorePage = () => {
   return (
     <div className="relative overflow-hidden">
-      {/* Bandeau défilant en arrière-plan */}
-      <div
-        className="absolute top-0 left-0 w-full h-full bg-repeat z-0 opacity-10"
-        style={{
-          backgroundImage: "url('/img/logo/logo_green.png')",
-          backgroundSize: "auto 200px",
-          backgroundPosition: "0 0",
-        }}
-      />
 
       {/* Contenu principal */}
       <div className="relative z-10 text-[#1F1F1F] max-w-5xl mx-auto p-6">

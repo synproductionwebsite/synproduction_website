@@ -75,7 +75,7 @@ const Navbar = forwardRef<HTMLElement, NavbarProps>(({ className, onContactClick
       {/* Logo centré */}
       <div className="absolute left-1/2 top-0.5 transform -translate-x-1/2 cursor-pointer">
         <Image
-          src="/img/logo/logo.png"
+          src="/img/logo/logo_purple.png"
           alt="SYN logo"
           width={scrolled ? 168 : 480}
           height={scrolled ? 48 : 160}
