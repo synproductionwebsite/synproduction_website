@@ -81,9 +81,15 @@ const RosterPage = () => {
     <div className="relative w-full text-center text-white pb-20 overflow-hidden">
       {/* Fond avec ton image */}
       <div
-        className="absolute inset-0 w-full h-full z-0 bg-repeat bg-top bg-fixed"
-        style={{ backgroundImage: "url('/img/bg/purple_bg.png')" }}
-      />
+        className="absolute inset-0 w-full h-full z-0"
+        style={{
+            backgroundImage: "url('/img/bg/purple_bg.png')",
+            backgroundRepeat: "repeat-y", // répète uniquement verticalement
+            backgroundSize: "100% auto", // largeur à 100%, hauteur automatique
+            backgroundPosition: "top center", // centré horizontalement
+            backgroundAttachment: "fixed", // effet fixe au scroll (optionnel)
+        }}
+        />
 
       {/* Shadow interne haut, plus discret */}
       <div

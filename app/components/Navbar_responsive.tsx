@@ -7,9 +7,11 @@ interface NavbarProps {
   className?: string;
   onContactClick?: () => void;
   onRosterClick?: () => void;
+  onMediaClick?: () => void;
+  onActusClick?: () => void;
 }
 
-const Navbar = forwardRef<HTMLElement, NavbarProps>(({ className, onContactClick, onRosterClick }, ref) => {
+const Navbar = forwardRef<HTMLElement, NavbarProps>(({ className, onContactClick, onRosterClick, onMediaClick, onActusClick }, ref) => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
@@ -76,6 +78,28 @@ const Navbar = forwardRef<HTMLElement, NavbarProps>(({ className, onContactClick
               className="hover:text-[#734A93] transition-colors duration-300"
             >
               ROSTER
+            </a>
+            <a
+              href="#"
+              onClick={(e) => {
+                e.preventDefault();
+                onMediaClick?.();
+                closeMenu();
+              }}
+              className="hover:text-[#734A93] transition-colors duration-300"
+            >
+              MEDIA
+            </a>
+            <a
+              href="#"
+              onClick={(e) => {
+                e.preventDefault();
+                onActusClick?.();
+                closeMenu();
+              }}
+              className="hover:text-[#734A93] transition-colors duration-300"
+            >
+              ACTUS
             </a>
             <a
               href="#"

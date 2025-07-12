@@ -8,6 +8,8 @@ import CorePage from "./core/page";
 import ContactPage from "./contact/page";
 import Footer from "./components/Footer";
 import RosterPage from "./roster/page";
+import ActusPage from "./actus/page";
+import MediaPage from "./media/page";
 
 const HomePage: React.FC = () => {
   const [isSmallScreen, setIsSmallScreen] = useState(false);
@@ -15,6 +17,8 @@ const HomePage: React.FC = () => {
 
   const contactPageRef = useRef<HTMLDivElement>(null);
   const rosterPageRef = useRef<HTMLDivElement>(null);
+  const mediaPageRef = useRef<HTMLDivElement>(null);
+  const actusPageRef = useRef<HTMLDivElement>(null);
 
   const getNavbarHeight = () =>
     navbarRef.current ? navbarRef.current.offsetHeight : 0;
@@ -83,6 +87,8 @@ const HomePage: React.FC = () => {
             className="sticky top-0 z-50"
             onContactClick={() => scrollToSection(contactPageRef)}
             onRosterClick={() => scrollToSection(rosterPageRef)}
+            onMediaClick={() => scrollToSection(mediaPageRef)}
+            onActusClick={() => scrollToSection(actusPageRef)}
           />
         ) : (
           <Navbar
@@ -90,6 +96,8 @@ const HomePage: React.FC = () => {
             className="sticky top-0 z-50"
             onContactClick={() => scrollToSection(contactPageRef)}
             onRosterClick={() => scrollToSection(rosterPageRef)}
+            onMediaClick={() => scrollToSection(mediaPageRef)}
+            onActusClick={() => scrollToSection(actusPageRef)}
           />
         )}
 
@@ -100,6 +108,14 @@ const HomePage: React.FC = () => {
 
         <div ref={rosterPageRef}>
           <RosterPage />
+        </div>
+
+        <div ref={mediaPageRef}>
+          <MediaPage />
+        </div>
+
+        <div ref={actusPageRef}>
+          <ActusPage />
         </div>
 
         <div ref={contactPageRef}>

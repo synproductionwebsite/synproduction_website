@@ -7,10 +7,12 @@ interface NavbarProps {
   className?: string;
   onContactClick?: () => void;
   onRosterClick?: () => void;
+  onMediaClick?: () => void;
+  onActusClick?: () => void;
 }
 
 // Définition du composant Navbar avec forwardRef
-const Navbar = forwardRef<HTMLElement, NavbarProps>(({ className, onContactClick, onRosterClick }, ref) => {
+const Navbar = forwardRef<HTMLElement, NavbarProps>(({ className, onContactClick, onRosterClick, onMediaClick, onActusClick }, ref) => {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -93,6 +95,26 @@ const Navbar = forwardRef<HTMLElement, NavbarProps>(({ className, onContactClick
           className="px-1 hover:text-[#675A95] transition-transform duration-300 hover:scale-110"
         >
           ROSTER
+        </a>
+        <a
+          href="#"
+          onClick={(e) => {
+            e.preventDefault();
+            onMediaClick?.();
+          }}
+          className="px-1 hover:text-[#675A95] transition-transform duration-300 hover:scale-110"
+        >
+          MEDIA
+        </a>
+        <a
+          href="#"
+          onClick={(e) => {
+            e.preventDefault();
+            onActusClick?.();
+          }}
+          className="px-1 hover:text-[#675A95] transition-transform duration-300 hover:scale-110"
+        >
+          ACTUS
         </a>
         <a
           href="#"
