@@ -60,24 +60,25 @@ const HomePage: React.FC = () => {
         <meta name="robots" content="index, follow" />
       </Head>
 
-      {/* ✅ Image de fond fixe derrière toute la page */}
-      <div
-        className="fixed top-0 left-0 w-full h-full bg-cover bg-center bg-no-repeat bg-fixed bg-[#fffbf7] z-[-10]"
-        // style={{ backgroundImage: 'url("/img/bg/main_bg.jpeg")' }}
-      />
-
-      {/* Bandeau défilant en arrière-plan */}
-      <div
-        className="absolute top-0 left-0 w-full h-full bg-repeat z-0 opacity-10"
-        style={{
-          backgroundImage: "url('/img/logo/logo_green.png')",
-          backgroundSize: "auto 200px",
-          backgroundPosition: "0 0",
-        }}
-      />
-
-      {/* ✅ Contenu principal */}
+      {/* Fond image qui suit la hauteur du contenu (absolute dans un conteneur relatif) */}
       <div className="relative w-full min-h-screen">
+        <div
+          className="absolute top-0 left-0 w-full h-full bg-cover bg-center bg-no-repeat bg-[#fffbf7] z-[-10]"
+          // décommente et mets ta vraie image ici si besoin
+          // style={{ backgroundImage: 'url("/img/bg/main_bg.jpeg")' }}
+        />
+
+        {/* Bandeau défilant en arrière-plan */}
+        <div
+          className="absolute top-0 left-0 w-full h-full bg-repeat z-0 opacity-10"
+          style={{
+            backgroundImage: "url('/img/logo/logo_green.png')",
+            backgroundSize: "auto 200px",
+            backgroundPosition: "0 0",
+          }}
+        />
+
+        {/* Contenu principal */}
         <h1
           style={{
             position: "absolute",
