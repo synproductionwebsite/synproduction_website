@@ -94,7 +94,7 @@ const Navbar = forwardRef<HTMLElement, NavbarProps>(({ className, onContactClick
           }}
           className="px-1 hover:text-[#675A95] transition-transform duration-300 hover:scale-110"
         >
-          ROSTER
+          ARTISTS
         </a>
         <a
           href="#"
@@ -104,7 +104,7 @@ const Navbar = forwardRef<HTMLElement, NavbarProps>(({ className, onContactClick
           }}
           className="px-1 hover:text-[#675A95] transition-transform duration-300 hover:scale-110"
         >
-          MEDIA
+          VADROUILLE
         </a>
         <a
           href="#"

@@ -66,7 +66,7 @@ const MediaPage = () => {
 
       {/* Contenu principal */}
       <div className="relative z-10 text-[#1F1F1F] max-w-5xl mx-auto p-6">
-        <h2 className="text-3xl lg:text-7xl font-extrabold pt-4">MEDIA</h2>
+        <h2 className="text-3xl lg:text-7xl font-extrabold pt-4">SYN EN VADROUILLE</h2>
         <div>
           <p className="bg-customPurple1 rounded-4xl font-mono text-justify p-4 mt-6 shadow-lg">
             Ajouter du contenu !

@@ -39,7 +39,7 @@ const HomePage: React.FC = () => {
 
   useEffect(() => {
     const checkWindowSize = () => {
-      setIsSmallScreen(window.innerWidth < 800);
+      setIsSmallScreen(window.innerWidth < 1500);
     };
 
     window.addEventListener("resize", checkWindowSize);
@@ -69,14 +69,14 @@ const HomePage: React.FC = () => {
         />
 
         {/* Bandeau défilant en arrière-plan */}
-        <div
+        {/* <div
           className="absolute top-0 left-0 w-full h-full bg-repeat z-0 opacity-10"
           style={{
             backgroundImage: "url('/img/logo/logo_green.png')",
             backgroundSize: "auto 200px",
             backgroundPosition: "0 0",
           }}
-        />
+        /> */}
 
         {/* Contenu principal */}
         <h1
