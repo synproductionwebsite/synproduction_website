@@ -25,7 +25,7 @@ const artists: Artist[] = [
     link: "https://www.amantique.fr",
     details: [
       <>
-        <span className=" text-green-300">Amantique</span> recherche le mouvement dans sa quête du grand réconfort. C’est l'effet d'une grande montagne autocentrée qui aime crier, parfois.
+        <span className=" text-green-300">Amantique</span> recherche le mouvement dans sa quête du grand réconfort. C&apos;est l'effet d'une grande montagne autocentrée qui aime crier, parfois.
       </>,
       <>
         Leur premier EP <span className="italic text-green-300">Laurent</span> est sorti le 17 février 2025.
@@ -45,13 +45,13 @@ const artists: Artist[] = [
     details: [
       <>
         <span className="italic text-green-300">Le chant du bouc</span> est un projet documentaire autofictionnel qui explore la question de la mémoire : 
-        celle qui se transmet, celle qui s’oublie, celle qui nous reste, celle que l’on construit. A la fois intime et collectif, c’est le récit d’une femme 
+        celle qui se transmet, celle qui s&apos;oublie, celle qui nous reste, celle que l&apos;on construit. A la fois intime et collectif, c&apos;est le récit d&apos;une femme 
         descendante de la diaspora algérienne qui tente de réinventer les contours de son histoire familiale pour garder un peu de sa grand-mère. Retisser les 
         mémoires pour leur donner du sens et réinscrire les individus dans une histoire collective.
       </>,
       <>
-        Afin de construire ce documentaire, <span className=" text-green-300">Danaé Akkari</span> souhaite partir à la rencontre des diasporas algérienne, prenant la route à l’envers de sa grand-mère. 
-        Se jouant de la temporalité comme de la spatialité, c’est un road-movie qui se prépare ; un documentaire sujet à la subjectivité de l’artiste.
+        Afin de construire ce documentaire, <span className=" text-green-300">Danaé Akkari</span> souhaite partir à la rencontre des diasporas algérienne, prenant la route à l&apos;envers de sa grand-mère. 
+        Se jouant de la temporalité comme de la spatialité, c&apos;est un road-movie qui se prépare ; un documentaire sujet à la subjectivité de l&apos;artiste.
       </>,
     ],
     syn: "SYN Production accompagne Danaé Akkari dans le développement, la création et la réalisation du film.",
@@ -64,9 +64,9 @@ const artists: Artist[] = [
     image: "/img/artists/alissalia.png",
     link: "#",
     details: [
-      "Habitée par ses imaginaires complexes, elle déploie divers projets mêlant poésie et création musicale s’interrogeant sur les notions d’écologie, d’identités diasporiques, de transformation à travers le voyage et de contemplation de paysages acoustiques. Victor Wooten dans les oreilles, elle se rend régulièrement à la Philharmonie de Paris-Cité de la musique où elle conçoit et anime des ateliers pédagogiques.",
-      "Actuellement, elle développe un projet transdisciplinaire qui repose sur son recueil de poème, La chair du monde – à paraître en septembre 2025 – illustré par Diane-Line Ferré. On y suit l’histoire d’Okpée, une okapi qui observe et explore le monde et les stigmates des vies passées qui ont laissé derrière elle un enchevêtrement de cicatrices et de ruines où la paix peut enfin exister.",
-      "A travers la volonté de re-poétiser le mouvement des êtres et de nos migrations, elle s’associe à un musicien et un chanteur lyrique kurde pour son projet Moodkollector, lequel met en voix et en musique l’épopée d’Okpée, accompagnée de Mamudou Soha à la kora et de Emre Sertkaya au chant.",
+      "Habitée par ses imaginaires complexes, elle déploie divers projets mêlant poésie et création musicale s&apos;interrogeant sur les notions d&apos;écologie, d&apos;identités diasporiques, de transformation à travers le voyage et de contemplation de paysages acoustiques. Victor Wooten dans les oreilles, elle se rend régulièrement à la Philharmonie de Paris-Cité de la musique où elle conçoit et anime des ateliers pédagogiques.",
+      "Actuellement, elle développe un projet transdisciplinaire qui repose sur son recueil de poème, La chair du monde – à paraître en septembre 2025 – illustré par Diane-Line Ferré. On y suit l&apos;histoire d&apos;Okpée, une okapi qui observe et explore le monde et les stigmates des vies passées qui ont laissé derrière elle un enchevêtrement de cicatrices et de ruines où la paix peut enfin exister.",
+      "A travers la volonté de re-poétiser le mouvement des êtres et de nos migrations, elle s&apos;associe à un musicien et un chanteur lyrique kurde pour son projet Moodkollector, lequel met en voix et en musique l&apos;épopée d&apos;Okpée, accompagnée de Mamudou Soha à la kora et de Emre Sertkaya au chant.",
     ],
     syn: "SYN Production accompagne Alissasilla dans la diffusion de ces projets (Communication, Evénementiel, Marketing).",
     contact: "Nathia JEGANATHAN - JEYARAJAH",
