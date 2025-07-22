@@ -77,7 +77,7 @@ const artists: Artist[] = [
 type Rotation = { x: number; y: number };
 
 const RosterPage = () => {
-  const [visibleUpcoming, setVisibleUpcoming] = useState(4);
+  const [visibleUpcoming] = useState(4);
   const [baseRotations, setBaseRotations] = useState<{ [key: number]: Rotation }>({});
   const [hoverRotations, setHoverRotations] = useState<{ [key: number]: Rotation }>({});
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);

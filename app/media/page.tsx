@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 
 const MediaPage = () => {
   return (
@@ -16,15 +17,18 @@ const MediaPage = () => {
       >
         <div className="flex animate-scroll ml-8">
           {[...Array(20)].map((_, i) => (
-            <img
+            <Image
               key={`scroll2-${i}`}
               src="/img/logo/logo_green.png"
               alt="logo"
-              className="h-20 mx-4 object-contain"
+              width={80}
+              height={80}
+              className="mx-4 object-contain"
             />
           ))}
         </div>
       </div>
+
       <div
         className="absolute left-[-10%] w-[200%] h-0 flex items-center pointer-events-none opacity-50"
         style={{
@@ -35,15 +39,18 @@ const MediaPage = () => {
       >
         <div className="flex animate-scroll ml-8">
           {[...Array(20)].map((_, i) => (
-            <img
+            <Image
               key={`scroll2-${i}`}
               src="/img/logo/logo_purple.png"
               alt="logo"
-              className="h-20 mx-4 object-contain"
+              width={80}
+              height={80}
+              className="mx-4 object-contain"
             />
           ))}
         </div>
       </div>
+
       <div
         className="absolute left-[70%] w-[200%] h-0 flex items-center pointer-events-none opacity-50"
         style={{
@@ -54,11 +61,13 @@ const MediaPage = () => {
       >
         <div className="flex animate-scroll ml-8">
           {[...Array(20)].map((_, i) => (
-            <img
+            <Image
               key={`scroll2-${i}`}
               src="/img/logo/logo_black.png"
               alt="logo"
-              className="h-20 mx-4 object-contain"
+              width={80}
+              height={80}
+              className="mx-4 object-contain"
             />
           ))}
         </div>
