@@ -25,7 +25,7 @@ const artists: Artist[] = [
     link: "https://www.amantique.fr",
     details: [
       <>
-        <span className=" text-green-300">Amantique</span> recherche le mouvement dans sa quête du grand réconfort. C&apos;est l'effet d'une grande montagne autocentrée qui aime crier, parfois.
+        <span className=" text-green-300">Amantique</span> recherche le mouvement dans sa quête du grand réconfort. C&apos;est l&apos;effet d&apos;une grande montagne autocentrée qui aime crier, parfois.
       </>,
       <>
         Leur premier EP <span className="italic text-green-300">Laurent</span> est sorti le 17 février 2025.
