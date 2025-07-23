@@ -88,7 +88,7 @@ const Navbar = forwardRef<HTMLElement, NavbarProps>(({ className, onContactClick
               }}
               className="hover:text-[#734A93] transition-colors duration-300"
             >
-              MEDIA
+              VADROUILLE
             </a>
             <a
               href="#"

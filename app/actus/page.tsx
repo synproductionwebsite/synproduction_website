@@ -1,208 +1,80 @@
-'use client'
+"use client";
 
-import { useEffect, useState, useRef } from 'react'
-import { ChevronLeft, ChevronRight } from 'lucide-react'
-import Image from 'next/image'
+import React from "react";
+import Image from "next/image";
 
-type Article = {
-  id: number
-  title: string
-  media?: string
-  description: string
-  imageUrl: string
-  articleUrl?: string
-}
-
-const articles: Article[] = [
+const articles = [
   {
-    id: 1,
-    title: 'Crowdfunding pour Maze',
-    media: 'Maze',
-    description:
-      'Maze est un média culturel indépendant qui promeut la scène artistique émergente. Cette campagne finance une soirée musicale unique organisée par SYN Production.',
-    imageUrl: '/img/article/maze.jpg',
-    articleUrl:
-      'https://www.helloasso.com/associations/syn-production/collectes/crowdfunding-maze-media',
+    title: "MAZE EN STEREO",
+    subtitle: "Maze",
+    author: "",
+    image: "/img/article/maze.jpg",
+    description: [
+      "Maze décide enfin de lancer une soirée en son nom. Voilà plus de 10 ans que le magazine promeut l’émergence et la nouvelle scène française comme internationale. Ayant traversé les genres musicaux pendant des années, nous sommes aujourd’hui un des médias qui aide les jeunes artistes à valoriser une image, une vitrine à présenter à leurs publics.",
+      "C’est pour cela que Maze décide d’aller plus loin que les mots en organisant un évènement dans la salle mythique du POPUP!, temple sonore qui prône la découverte où de nombreux artistes y ont chanté et joué leurs premières notes de musique en concert.",
+      "Pour cette première fête au POPUP!, nous avons décidé de vous présenter une lineup exclusivement féminine. Vous serez charmé·e·s par la voix soul de Carel, chanteuse parisienne, aux productions mélangeant groove, pop et r’n’b. Puis vous pourrez découvrir ou redécouvrir l’artiste Nalla qui jongle entre la pop, le jazz et quelques sonorités hip hop. Pleine d’extravagance, elle sera la dose d’énergie folle parfaite pour se déhancher sur la touche finale de notre soirée : le DJ set de Monsamp et ses musiques disco funk afin de vous faire danser jusqu’au bout de la nuit.",
+      "Une programmation éclectique à l’image de Maze et de ses valeurs. De la bonne musique et de belles personnes, tout ce qu’il faut pour passer une soirée mémorable."
+    ],
+    reverse: false,
   },
   {
-    id: 2,
-    title: 'Découverte du Jazz',
-    media: 'Le Monde de la Musique',
-    description:
-      'Un voyage à travers les origines du jazz, ses grands artistes et son influence sur la musique moderne. Le jazz continue de captiver les auditeurs.',
-    imageUrl: '/img/article/maze.jpg',
-    articleUrl: '#',
+    title: "ATELEIR DE MÉDIATION",
+    subtitle: "SYN Production",
+    author: "",
+    image: "/img/article/atelier.jpg",
+    description: [
+      "blabla"
+    ],
+    reverse: false,
   },
-  {
-    id: 3,
-    title: 'L’art de la photographie urbaine',
-    description:
-      'La photographie urbaine capture la vie des villes avec des perspectives uniques. Elle révèle l’âme des métropoles à travers des compositions audacieuses.',
-    imageUrl: '/img/article/maze.jpg',
-    articleUrl: '#',
-  },
-  {
-    id: 4,
-    title: 'Festival Émergence 2025',
-    media: 'SYN Prod',
-    description:
-      'Un événement pluridisciplinaire réunissant jeunes talents et figures montantes de la scène émergente.',
-    imageUrl: '/img/article/maze.jpg',
-    articleUrl: '#',
-  },
-  {
-    id: 5,
-    title: 'Interview : Clara, artiste à suivre',
-    description:
-      'Clara partage sa vision de l’art et son parcours dans l’univers de la musique électronique indépendante.',
-    imageUrl: '/img/article/maze.jpg',
-    articleUrl: 'https://synprod.com/interview-clara',
-  },
-  {
-    id: 6,
-    title: 'Retour sur la Nuit des Arts 2024',
-    media: 'Culture Actuelle',
-    description:
-      'Une soirée riche en performances et découvertes artistiques. Revivez les moments forts de l’édition 2024.',
-    imageUrl: '/img/article/maze.jpg',
-    articleUrl: '#',
-  },
-]
+];
 
-const CARD_WIDTH = 450
-const CARD_GAP = 40
-const SIDE_PADDING = 120
-
-export default function ActusPage() {
-  const [currentIndex, setCurrentIndex] = useState(Math.floor(articles.length / 2))
-  const [isHovered, setIsHovered] = useState(false)
-  const containerRef = useRef<HTMLDivElement>(null)
-
-  // Scroll to the current card when currentIndex changes
-  useEffect(() => {
-    if (!containerRef.current) return
-
-    const scrollPos =
-      currentIndex * (CARD_WIDTH + CARD_GAP) -
-      containerRef.current.clientWidth / 2 +
-      CARD_WIDTH / 2
-
-    containerRef.current.scrollTo({
-      left: scrollPos,
-      behavior: 'smooth',
-    })
-  }, [currentIndex])
-
-  // Auto-scroll every 5 seconds
-  useEffect(() => {
-    if (isHovered) return
-
-    const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % articles.length)
-    }, 5000)
-
-    return () => clearInterval(interval)
-  }, [isHovered])
-
-  const goToPrevious = () => {
-    setCurrentIndex((prev) => (prev === 0 ? articles.length - 1 : prev - 1))
-  }
-
-  const goToNext = () => {
-    setCurrentIndex((prev) => (prev + 1) % articles.length)
-  }
-
+const ActusPage = () => {
   return (
-    <div className="relative w-full bg-gradient-to-r from-[#685A96] via-[#685A96] to-[#2c5d32] flex flex-col items-center justify-center py-8">
-      <h2 className="text-5xl font-extrabold mb-5 text-white select-none">ACTUS</h2>
+    <div className="w-full mx-auto text-center pb-10 bg-gradient-to-r from-[#685A96] via-[#685A96] to-[#2c5d32]">
+      <h2 className="text-3xl lg:text-7xl font-extrabold pt-4 mb-8 text-white">
+        ACTUS
+      </h2>
 
-      {/* Carrousel */}
-      <div
-        ref={containerRef}
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
-        className="flex overflow-x-auto no-scrollbar gap-5 w-full snap-x snap-mandatory py-10"
-        style={{
-          scrollBehavior: 'smooth',
-          paddingLeft: SIDE_PADDING,
-          paddingRight: SIDE_PADDING,
-        }}
-      >
-        {articles.map((article, index) => {
-          const isActive = index === currentIndex
+      <div className="mt-12 space-y-16 px-4">
+        {articles.map((article, index) => (
+          <div
+            key={index}
+            className={`flex flex-col md:flex-row ${
+              article.reverse ? "md:flex-row-reverse" : ""
+            } items-stretch overflow-hidden rounded-2xl mx-auto max-w-5xl 
+              backdrop-blur-md bg-white/10
+              transition-transform duration-300 ease-in-out 
+              hover:scale-[1.02] hover:shadow-2xl hover:ring-2 hover:ring-white/30`}
+          >
+            {/* Image */}
+            <div className="md:w-1/2 relative h-[300px] md:h-auto">
+              <Image
+                src={article.image}
+                alt={article.title}
+                fill
+                className="object-cover"
+              />
+            </div>
 
-          return (
-            <a
-              key={article.id}
-              href={article.articleUrl ?? '#'}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={`snap-center flex-shrink-0 bg-white bg-opacity-90 backdrop-blur-md shadow-lg cursor-pointer transform transition-all duration-500 ease-in-out rounded-3xl overflow-hidden
-                ${isActive ? 'scale-110 shadow-3xl z-30 opacity-100' : 'scale-90 opacity-50'}
-            `}
-              style={{ width: CARD_WIDTH }}
-              aria-current={isActive ? 'true' : 'false'}
-            >
-              <div className="flex flex-row h-full">
-                {/* Image à gauche */}
-                <div className="relative w-[40%] min-h-[400px]">
-                  <Image
-                    src={article.imageUrl}
-                    alt={article.title}
-                    fill
-                    className="object-cover"
-                    priority={isActive}
-                  />
-                </div>
-
-                {/* Texte à droite */}
-                <div className="p-4 flex flex-col w-[60%]">
-                  <h3 className="text-xl font-bold mb-1">{article.title}</h3>
-                  {article.media && (
-                    <h4 className="text-md font-semibold mb-2 text-purple-700">{article.media}</h4>
-                  )}
-                  <p className="text-gray-700 text-sm line-clamp-5 text-justify">{article.description}</p>
-                </div>
-              </div>
-            </a>
-          )
-        })}
-      </div>
-
-      {/* Navigation : flèches + points */}
-      <div className="flex items-center justify-center gap-8 mt-3 select-none">
-        {/* Flèche gauche */}
-        <button
-          onClick={goToPrevious}
-          aria-label="Article précédent"
-          className="bg-white p-3 rounded-full shadow hover:bg-gray-200 transition text-amber-300"
-        >
-          <ChevronLeft size={28} />
-        </button>
-
-        {/* Dots */}
-        <div className="flex space-x-3">
-          {articles.map((_, i) => (
-            <button
-              key={`dot-${i}`}
-              onClick={() => setCurrentIndex(i)}
-              className={`w-5 h-5 rounded-full transition-colors duration-300 ${
-                i === currentIndex ? 'bg-white' : 'bg-white/40'
-              }`}
-              aria-label={`Aller à l’article ${i + 1}`}
-            />
-          ))}
-        </div>
-
-        {/* Flèche droite */}
-        <button
-          onClick={goToNext}
-          aria-label="Article suivant"
-          className="bg-white p-3 rounded-full shadow hover:bg-gray-200 transition text-amber-300"
-        >
-          <ChevronRight size={28} />
-        </button>
+            {/* Texte */}
+            <div className="md:w-1/2 flex flex-col justify-center p-6 text-left space-y-4 text-white">
+              <h3 className="text-4xl font-bold">{article.title}</h3>
+              <p className="text-2xl italic">{article.subtitle}</p>
+              {article.author && (
+                <p className="text-sm opacity-80">Par {article.author}</p>
+              )}
+              {article.description?.map((paragraph, i) => (
+                <p key={i} className="text-base leading-relaxed font-mono">
+                  {paragraph}
+                </p>
+              ))}
+            </div>
+          </div>
+        ))}
       </div>
     </div>
-  )
-}
+  );
+};
+
+export default ActusPage;

@@ -63,7 +63,7 @@ const HomePage: React.FC = () => {
       {/* Fond image qui suit la hauteur du contenu (absolute dans un conteneur relatif) */}
       <div className="relative w-full min-h-screen">
         <div
-          className="absolute top-0 left-0 w-full h-full bg-cover bg-center bg-no-repeat bg-[#fffbf7] z-[-10]"
+          className="absolute top-0 left-0 w-full h-full bg-cover bg-center bg-no-repeat bg-[#fff9f2] z-[-10]"
           // décommente et mets ta vraie image ici si besoin
           // style={{ backgroundImage: 'url("/img/bg/main_bg.jpeg")' }}
         />
