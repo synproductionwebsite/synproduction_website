@@ -81,10 +81,10 @@ const MediaPage = () => {
 
         <div className="bg-white/90 rounded-4xl font-mono text-justify p-4 mt-6 shadow-lg">
           <p className="mb-5">
-            Lors d'un séjour au Sri Lanka, nous avons expérimenté le batik. Cette technique indonésienne de création de motifs sur tissu est très répandue au pays du thé et de la cannelle.
+            Lors d&apos;un séjour au Sri Lanka, nous avons expérimenté le batik. Cette technique indonésienne de création de motifs sur tissu est très répandue au pays du thé et de la cannelle.
           </p>
           <p>
-            Nous en avons profité pour créer un étendard à notre effigie. Et même qu'on nous a traduit notre nom en cinghalais !
+            Nous en avons profité pour créer un étendard à notre effigie. Et même qu&apos;on nous a traduit notre nom en cinghalais !
           </p>
         </div>
 
@@ -131,10 +131,10 @@ const MediaPage = () => {
       </div>
 
         <div className="relative z-10 text-[#1F1F1F] max-w-5xl mx-auto p-6">
-          <h3 className="lg:text-5xl">Tampons et précision, l’art de la linogravure</h3>
+          <h3 className="lg:text-5xl">Tampons et précision, l&apos;art de la linogravure</h3>
           <div className="bg-white/90 rounded-4xl font-mono text-justify p-4 mt-6 shadow-lg">
             <p>
-              Atelier linogravure avec l'artiste Marilyn Depagne au Méditerraneo-Gare du Sud. Un instant suspendu où l'on nous a transmis le savoir faire de cette technique qui requiert précision 
+              Atelier linogravure avec l&apos;artiste Marilyn Depagne au Méditerraneo-Gare du Sud. Un instant suspendu où l&apos;on nous a transmis le savoir faire de cette technique qui requiert précision 
               et patience! On est reparti avec trois petits tampons aux traits de SYN.
             </p>
           </div>
