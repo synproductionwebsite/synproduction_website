@@ -13,7 +13,8 @@ type Artist = {
   details?: React.ReactNode[];
   contact?: string;
   syn: string;
-  video?: string; // URL YouTube
+  video?: string;
+  poster?: string;
 };
 
 const artists: Artist[] = [
@@ -40,8 +41,9 @@ const artists: Artist[] = [
     name: "DANAÉ AKKARI",
     title: "Cinéaste",
     location: "Paris",
-    image: "/img/artists/danae_akkari.png",
+    image: "/img/artists/danae.png",
     link: "#",
+    poster: "/img/artists/danae2.png",
     details: [
       <>
         <span className="italic text-green-300">Le chant du bouc</span> est un projet documentaire autofictionnel qui explore la question de la mémoire : 
@@ -58,15 +60,15 @@ const artists: Artist[] = [
     contact: "Nathia JEGANATHAN - JEYARAJAH",
   },
   {
-    name: "ALISSALIA",
+    name: "ALISSASILA",
     title: "Compositrice, pédagogue et poétesse",
     location: "Paris",
     image: "/img/artists/alissalia.png",
     link: "#",
     details: [
-      "Habitée par ses imaginaires complexes, elle déploie divers projets mêlant poésie et création musicale s&apos;interrogeant sur les notions d&apos;écologie, d&apos;identités diasporiques, de transformation à travers le voyage et de contemplation de paysages acoustiques. Victor Wooten dans les oreilles, elle se rend régulièrement à la Philharmonie de Paris-Cité de la musique où elle conçoit et anime des ateliers pédagogiques.",
-      "Actuellement, elle développe un projet transdisciplinaire qui repose sur son recueil de poème, La chair du monde – à paraître en septembre 2025 – illustré par Diane-Line Ferré. On y suit l&apos;histoire d&apos;Okpée, une okapi qui observe et explore le monde et les stigmates des vies passées qui ont laissé derrière elle un enchevêtrement de cicatrices et de ruines où la paix peut enfin exister.",
-      "A travers la volonté de re-poétiser le mouvement des êtres et de nos migrations, elle s&apos;associe à un musicien et un chanteur lyrique kurde pour son projet Moodkollector, lequel met en voix et en musique l&apos;épopée d&apos;Okpée, accompagnée de Mamudou Soha à la kora et de Emre Sertkaya au chant.",
+      <>"Habitée par ses imaginaires complexes, elle déploie divers projets mêlant poésie et création musicale s&apos;interrogeant sur les notions d&apos;écologie, d&apos;identités diasporiques, de transformation à travers le voyage et de contemplation de paysages acoustiques. Victor Wooten dans les oreilles, elle se rend régulièrement à la Philharmonie de Paris-Cité de la musique où elle conçoit et anime des ateliers pédagogiques."</>,
+      <>"Actuellement, elle développe un projet transdisciplinaire qui repose sur son recueil de poème, <span className=" text-green-300">La chair du monde</span> – à paraître en septembre 2025 – illustré par Diane-Line Ferré. On y suit l&apos;histoire d&apos;Okpée, une okapi qui observe et explore le monde et les stigmates des vies passées qui ont laissé derrière elle un enchevêtrement de cicatrices et de ruines où la paix peut enfin exister."</>,
+      <>"A travers la volonté de re-poétiser le mouvement des êtres et de nos migrations, elle s&apos;associe à un musicien et un chanteur lyrique kurde pour son projet Moodkollector, lequel met en voix et en musique l&apos;épopée d&apos;Okpée, accompagnée de Mamudou Soha à la kora et de Emre Sertkaya au chant."</>,
     ],
     syn: "SYN Production accompagne Alissasilla dans la diffusion de ces projets (Communication, Evénementiel, Marketing).",
     contact: "Nathia JEGANATHAN - JEYARAJAH",
@@ -126,29 +128,25 @@ const RosterPage = () => {
     try {
       const parsedUrl = new URL(url);
       let videoId = "";
-  
+
       if (parsedUrl.hostname === "youtu.be") {
-        // URL courte : https://youtu.be/VIDEO_ID
         videoId = parsedUrl.pathname.slice(1);
       } else if (
-        parsedUrl.hostname === "www.youtube.com" || 
+        parsedUrl.hostname === "www.youtube.com" ||
         parsedUrl.hostname === "youtube.com"
       ) {
-        // URL normale : https://www.youtube.com/watch?v=VIDEO_ID
         videoId = parsedUrl.searchParams.get("v") || "";
       }
-  
+
       if (!videoId) return null;
-  
       return `https://www.youtube.com/embed/${videoId}`;
     } catch {
       return null;
     }
-  }  
+  }
 
   return (
     <div className="relative w-full text-center text-white pb-20 overflow-hidden">
-      {/* Fond */}
       <div
         className="absolute inset-0 w-full h-full z-0"
         style={{
@@ -160,33 +158,16 @@ const RosterPage = () => {
         }}
       />
 
-      {/* Shadow haut */}
-      <div
-        className="pointer-events-none absolute top-0 left-0 w-full h-12"
-        style={{
-          background: "linear-gradient(to bottom, rgba(0,0,0,0.25), transparent)",
-          zIndex: 20,
-        }}
-      />
-      {/* Shadow bas */}
-      <div
-        className="pointer-events-none absolute bottom-0 left-0 w-full h-12"
-        style={{
-          background: "linear-gradient(to top, rgba(0,0,0,0.25), transparent)",
-          zIndex: 20,
-        }}
-      />
+      <div className="pointer-events-none absolute top-0 left-0 w-full h-12" style={{ background: "linear-gradient(to bottom, rgba(0,0,0,0.25), transparent)", zIndex: 20 }} />
+      <div className="pointer-events-none absolute bottom-0 left-0 w-full h-12" style={{ background: "linear-gradient(to top, rgba(0,0,0,0.25), transparent)", zIndex: 20 }} />
 
       <div className="relative z-10 max-w-[1300px] mx-auto px-4">
-        <h2 className="text-3xl lg:text-7xl font-extrabold pt-4 mb-8">ARTISTS</h2>
+        <h2 className="text-3xl lg:text-7xl font-extrabold pt-4 mb-8">ARTISTES</h2>
 
-        {/* Grille des cartes + détails */}
         <div
-          className={
-            selectedIndex === null
-              ? "flex flex-wrap justify-center gap-8"
-              : "grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 justify-center"
-          }
+          className={`grid gap-8 ${
+            selectedIndex === null ? "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3" : "grid-cols-1 sm:grid-cols-2 lg:grid-cols-4"
+          } justify-center`}
         >
           {artists.slice(0, visibleUpcoming).map((artist, index) => (
             <React.Fragment key={index}>
@@ -196,7 +177,7 @@ const RosterPage = () => {
                 aria-expanded={selectedIndex === index}
                 aria-controls={`artist-details-${index}`}
               >
-                <div className="relative w-[320px] h-[360px] mx-auto group perspective-[1000px]">
+                <div className="relative w-full max-w-xs h-[360px] mx-auto group perspective-[1000px]">
                   <div
                     className="transition-transform duration-200 ease-out transform rounded-lg w-full h-full shadow-lg"
                     onMouseMove={(e) => handleMouseMove(e, index)}
@@ -207,7 +188,7 @@ const RosterPage = () => {
                         "0 8px 20px rgba(0,0,0,0.7), 0 15px 25px rgba(44, 93, 50, 0.4)",
                     }}
                   >
-                    <div className="relative w-[320px] h-[320px] rounded-lg overflow-hidden">
+                    <div className="relative w-full h-[320px] rounded-lg overflow-hidden">
                       <Image
                         src={artist.image}
                         alt={artist.name}
@@ -215,8 +196,8 @@ const RosterPage = () => {
                         className="object-cover rounded-lg"
                       />
                     </div>
-                    <div className="absolute bottom-0 w-full rounded-b-lg px-6 py-5 backdrop-blur-sm bg-gradient-to-t from-[rgba(44,93,50,0.7)] to-[rgba(44,93,50,0.3)] transition-colors duration-300 group-hover:bg-[rgba(44,93,50,0.85)]">
-                      <h3 className="text-2xl font-semibold text-white drop-shadow-md">
+                    <div className="absolute bottom-0 w-full rounded-b-lg px-4 py-4 backdrop-blur-sm bg-gradient-to-t from-[rgba(44,93,50,0.7)] to-[rgba(44,93,50,0.3)] transition-colors duration-300 group-hover:bg-[rgba(44,93,50,0.85)]">
+                      <h3 className="text-xl font-semibold text-white drop-shadow-md">
                         {artist.name}
                       </h3>
                       <p className="text-sm font-black text-[#d6e7d1] drop-shadow-md">
@@ -227,22 +208,17 @@ const RosterPage = () => {
                 </div>
               </button>
 
-              {/* Détails + vidéo */}
               {selectedIndex === index && (
                 <div
                   id={`artist-details-${index}`}
-                  className="col-span-full mt-4 max-w-[90%] mx-auto px-6 text-left bg-black/70 p-6 rounded-lg border border-green-900 shadow-xl"
-                  style={{ gridColumn: "span 4" }}
+                  className="col-span-full mt-4 w-full px-6 text-left bg-black/70 p-6 rounded-lg border border-green-900 shadow-xl"
                 >
                   <div className="flex flex-col lg:flex-row gap-6">
-                    {/* Texte */}
                     <div className="flex-1">
-                      <h3 className="text-3xl font-bold text-white">{artist.name}</h3>
+                      <h3 className="text-2xl font-bold text-white">{artist.name}</h3>
                       {artist.title && <p className="mb-2">{artist.title}</p>}
                       {artist.location && (
-                        <p className="text-sm text-green-200 italic mb-2">
-                          {artist.location}
-                        </p>
+                        <p className="text-sm text-green-200 italic mb-2">{artist.location}</p>
                       )}
                       {artist.details?.map((detail, i) => (
                         <p key={i} className="mt-4 text-white leading-relaxed">
@@ -250,43 +226,34 @@ const RosterPage = () => {
                         </p>
                       ))}
                       {artist.syn && (
-                        <p className="mt-5 italic text-green-300">
-                          {artist.syn}
-                        </p>
-                      )}
-                      {artist.link && (
-                        <p className="mt-6">
-                          <a
-                            href={artist.link}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-green-300 underline hover:text-green-100"
-                          >
-                            En savoir plus
-                          </a>
-                        </p>
+                        <p className="mt-4 text-green-300 italic text-sm">{artist.syn}</p>
                       )}
                       {artist.contact && (
-                        <p className="mt-4 text-green-200">Contact: <span className="italic">{artist.contact}</span></p>
+                        <p className="mt-2 text-white">Contact : <span className="font-bold">{artist.contact}</span></p>
                       )}
                     </div>
 
-                    {/* Vidéo YouTube */}
-                    {artist.video && (
-                      <div
-                        className="w-full max-w-[560px] mx-auto rounded-lg shadow-lg"
-                        style={{ minHeight: '315px', position: 'relative', paddingBottom: '56.25%' }}
-                      >
+                    {artist.poster ? (
+                      <div className="w-full lg:w-[50%] aspect-video relative rounded-lg overflow-hidden">
+                        <Image
+                          src={artist.poster}
+                          alt={`${artist.name} poster`}
+                          fill
+                          className="object-cover rounded-lg"
+                        />
+                      </div>
+                    ) : artist.video ? (
+                      <div className="w-full lg:w-[50%] aspect-video">
                         <iframe
-                          className="absolute top-0 left-0 w-full h-full rounded-lg"
-                          src={getYouTubeEmbedUrl(artist.video) ?? ""}
-                          title={`${artist.name} video`}
+                          className="w-full h-full rounded-lg"
+                          src={getYouTubeEmbedUrl(artist.video) || ""}
+                          title={artist.name}
                           frameBorder="0"
                           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                           allowFullScreen
                         />
                       </div>
-                    )}
+                    ) : null}
                   </div>
                 </div>
               )}

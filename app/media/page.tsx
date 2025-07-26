@@ -142,26 +142,37 @@ const MediaPage = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
           {/* Colonne images */}
           <div className="flex flex-col gap-4 h-[500px]">
-            <div className="rounded-2xl overflow-hidden shadow-md">
+            <div className="rounded-2xl overflow-hidden shadow-md h-[50%] md:h-1/2">
               <img
                 src="/img/media/tempon1.jpg"
                 alt="Batik création 1"
                 className="w-full h-full object-cover"
               />
+              </div>
+              <div className="rounded-2xl overflow-hidden shadow-md h-[50%] md:h-1/2">
+              <video
+                autoPlay
+                loop
+                muted
+                className="w-full h-full object-cover"
+              >
+                <source src="/video/media/tempon.mp4" type="video/mp4" />
+                Votre navigateur ne supporte pas la lecture de vidéo.
+              </video>
             </div>
           </div>
 
           {/* Colonne vidéo verticale pleine hauteur */}
-          <div className="rounded-2xl overflow-hidden shadow-md flex h-[500px]">
-            <video
-              autoPlay
-              loop
-              muted
-              className="w-full h-full object-cover"
-            >
-              <source src="/video/media/tempon.mp4" type="video/mp4" />
-              Votre navigateur ne supporte pas la lecture de vidéo.
-            </video>
+          <div className="flex flex-col gap-4 h-[500px] rounded-2xl">
+              <video
+                autoPlay
+                loop
+                muted
+                className="w-full h-full object-cover rounded-2xl"
+              >
+                <source src="/video/media/lino.mp4" type="video/mp4" />
+                Votre navigateur ne supporte pas la lecture de vidéo.
+              </video>
           </div>
         </div>
         </div>

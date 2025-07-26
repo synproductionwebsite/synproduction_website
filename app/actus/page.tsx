@@ -18,12 +18,12 @@ const articles = [
     reverse: false,
   },
   {
-    title: "ATELEIR DE MÉDIATION",
+    title: "ATELIER DE MÉDIATION",
     subtitle: "SYN Production",
     author: "",
     image: "/img/article/atelier.jpg",
     description: [
-      "blabla"
+      "Premier atelier de SYN au studio de l'association Demain Nos Enfants. L'objectif de cette première rencontre était de prendre un temps pour réfléchir les processus de création. Plusieurs artistes (photographes, musiciens-compositeurs, cinéastes) ont prit le temps de réfléchir à des méthodes d'organisation et des sources d'inspiration. Nous avons conclu cette rencontre par l'enregistrement d'un podcast - publication TBA."
     ],
     reverse: false,
   },
@@ -147,8 +147,8 @@ const ActusPage = () => {
                 }
                 flex flex-col md:flex-row items-stretch overflow-visible`}
               style={{
-                minHeight: "400px",
-                maxHeight: isExpanded ? "none" : "400px",
+                minHeight: "600px",
+                maxHeight: isExpanded ? "none" : "600px",
               }}
             >
               {/* Image */}

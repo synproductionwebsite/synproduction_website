@@ -113,7 +113,7 @@ const HomePage: React.FC = () => {
         )}
 
         {/* Sections */}
-        <div className="mt-25">
+        <div className={isSmallScreen ? "mt-0" : "mt-25"}>
           <CorePage />
         </div>
 
