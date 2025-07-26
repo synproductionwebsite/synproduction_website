@@ -29,7 +29,7 @@ const CorePage = () => {
         <div className="my-20">
           <h2 className="text-3xl lg:text-7xl mb-4">L&apos;ÉVÉNEMENTIEL</h2>
           <div className="lg:mr-10 rounded-4xl font-mono text-justify bg-gradient-to-tr from-[#685A96] to-[#2c5d32] p-0.5 shadow-lg">
-            <div className="w-full rounded-4xl bg-[#fff9f2] backdrop-blur-md flex lg:flex-row items-stretch">
+            <div className="w-full rounded-4xl bg-[#fff9f2] backdrop-blur-md flex flex-col lg:flex-row items-stretch">
               {/* Image */}
               <div className="w-full lg:w-[40%] relative h-64 lg:h-auto">
                 <Image
@@ -53,7 +53,7 @@ const CorePage = () => {
         </div>
 
         <div className="mb-20">
-          <h2 className="text-right lg:text-7xl mb-4">L&apos;ACCOMPAGNEMENT</h2>
+          <h2 className="text-right text-3xl lg:text-7xl mb-4">L&apos;ACCOMPAGNEMENT</h2>
           <div className="lg:mr-10 rounded-4xl font-mono text-justify bg-gradient-to-tr from-[#685A96] to-[#2c5d32] p-0.5 shadow-lg">
             <div className="w-full rounded-4xl bg-[#fff9f2] backdrop-blur-md flex flex-col-reverse lg:flex-row items-stretch">
               {/* Texte */}
@@ -68,7 +68,7 @@ const CorePage = () => {
               {/* Image */}
               <div className="w-full lg:w-[40%] relative h-64 lg:h-auto">
                 <Image
-                  src="/img/artists/atelier2.jpg"
+                  src="/img/core/atelier2.jpg"
                   alt="Logo Amantique"
                   className="rounded-4xl object-cover"
                   fill
@@ -81,7 +81,7 @@ const CorePage = () => {
         <div className="g:flex lg:items-start lg:space-x-10 flex flex-col">
           <h2 className="text-3xl lg:text-7xl mb-4">LA MÉDIATION CULTURELLE</h2>
           <div className="lg:mr-10 rounded-4xl font-mono text-justify bg-gradient-to-tr from-[#685A96] to-[#2c5d32] p-0.5 shadow-lg">
-            <div className="w-full rounded-4xl bg-[#fff9f2] backdrop-blur-md flex lg:flex-row items-stretch">
+            <div className="w-full rounded-4xl bg-[#fff9f2] backdrop-blur-md flex flex-col lg:flex-row items-stretch">
               {/* Image */}
               <div className="w-full lg:w-[40%] relative h-64 lg:h-auto">
                 <Image
