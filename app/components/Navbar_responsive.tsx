@@ -83,23 +83,23 @@ const Navbar = forwardRef<HTMLElement, NavbarProps>(({ className, onContactClick
               href="#"
               onClick={(e) => {
                 e.preventDefault();
-                onMediaClick?.();
-                closeMenu();
-              }}
-              className="hover:text-[#734A93] transition-colors duration-300"
-            >
-              VADROUILLE
-            </a>
-            <a
-              href="#"
-              onClick={(e) => {
-                e.preventDefault();
                 onActusClick?.();
                 closeMenu();
               }}
               className="hover:text-[#734A93] transition-colors duration-300"
             >
               ACTUS
+            </a>
+            <a
+              href="#"
+              onClick={(e) => {
+                e.preventDefault();
+                onMediaClick?.();
+                closeMenu();
+              }}
+              className="hover:text-[#734A93] transition-colors duration-300"
+            >
+              VADROUILLE
             </a>
             <a
               href="#"

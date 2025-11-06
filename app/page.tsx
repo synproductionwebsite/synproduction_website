@@ -10,8 +10,15 @@ import Footer from "./components/Footer";
 import RosterPage from "./roster/page";
 import ActusPage from "./actus/page";
 import MediaPage from "./media/page";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const HomePage: React.FC = () => {
+
+  useEffect(() => {
+    AOS.init({ duration: 1000 });
+  }, []);
+
   const [isSmallScreen, setIsSmallScreen] = useState(false);
   const navbarRef = useRef<HTMLElement>(null);
 
@@ -113,23 +120,23 @@ const HomePage: React.FC = () => {
         )}
 
         {/* Sections */}
-        <div className={isSmallScreen ? "mt-0" : "mt-25"}>
+        <div ref={contactPageRef} data-aos="fade-up">
           <CorePage />
         </div>
 
-        <div ref={rosterPageRef}>
+        <div ref={rosterPageRef} data-aos="fade-up">
           <RosterPage />
         </div>
 
-        <div ref={mediaPageRef}>
-          <MediaPage />
-        </div>
-
-        <div ref={actusPageRef}>
+        <div ref={actusPageRef} data-aos="fade-up">
           <ActusPage />
         </div>
 
-        <div ref={contactPageRef}>
+        <div ref={mediaPageRef} data-aos="fade-up">
+          <MediaPage />
+        </div>
+
+        <div ref={contactPageRef} data-aos="fade-up">
           <ContactPage />
         </div>
 

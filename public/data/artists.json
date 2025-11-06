@@ -1,0 +1,75 @@
+[
+    {
+      "name": "AMANTIQUE",
+      "title": "Rock punkifié en français",
+      "location": "Paris/Nantes",
+      "image": "/img/artists/amantique.jpg",
+      "link": "https://www.amantique.fr",
+      "details": [
+        "Amantique recherche le mouvement dans sa quête du grand réconfort. C'est l'effet d'une grande montagne autocentrée qui aime crier, parfois.",
+        "Leur premier EP « Laurent » est sorti le 17 février 2025. Cette création résonne comme un bourdonnement de cinq morceaux tout aussi puissants que poétiques."
+      ],
+      "syn": "SYN Production accompagne le groupe sur leur développement live. (Booking, Communication, Administratif, Production)",
+      "contact": "Eva DUC",
+      "video": "https://youtu.be/cmtglxtHvzI?si=nMPNnRTNgaNjdMjt"
+    },
+    {
+      "name": "DANAÉ AKKARI",
+      "title": "Cinéaste",
+      "location": "Paris",
+      "image": "/img/artists/danae.png",
+      "link": "#",
+      "poster": "/img/artists/danae2.png",
+      "details": [
+        "« Le chant du bouc » est un projet documentaire autofictionnel qui explore la question de la mémoire : celle qui se transmet, s'oublie, reste, se construit. À la fois intime et collectif.",
+        "Pour construire ce documentaire, Danaé Akkari souhaite partir à la rencontre des diasporas algériennes, dans un road-movie subjectif."
+      ],
+      "syn": "SYN Production accompagne Danaé Akkari dans le développement, la création et la réalisation du film.",
+      "contact": "Nathia JEGANATHAN - JEYARAJAH"
+    },
+    {
+      "name": "ALISSASILA",
+      "title": "Compositrice, pédagogue et poétesse",
+      "location": "Paris",
+      "image": "/img/artists/alissalia.png",
+      "link": "#",
+      "details": [
+        "Habitée par ses imaginaires complexes, elle déploie divers projets mêlant poésie et création musicale autour des notions d'écologie, d'identités diasporiques, de transformation et contemplation.",
+        "Elle développe un projet transdisciplinaire autour de son recueil « La chair du monde » (à paraître 2025).",
+        "Son projet Moodkollector met en voix et en musique l'épopée d'Okpée."
+      ],
+      "syn": "SYN Production accompagne Alissasilla dans la diffusion de ses projets (Communication, Evénementiel, Marketing).",
+      "contact": "Nathia JEGANATHAN - JEYARAJAH",
+      "video": "https://youtu.be/_AM5LtuMq-I?si=bOlXJIDJGgNRGHAB"
+    },
+    {
+      "name": "Aurélie Chantelly",
+      "title": "Photographe de mode",
+      "location": "Paris, Martinique",
+      "image": "/img/artists/aurelie_chantelly.jpg",
+      "link": "#",
+      "details": [
+        "Née en Martinique, elle vit à Paris. Photographe de mode inspirée par la culture caribéenne et hip-hop.",
+        "CONSIDERATION est un projet photo-vidéo questionnant le regard sur soi, entre perception intérieure et extérieure."
+      ],
+      "syn": "SYN Production l'accompagne sur la diffusion de son projet CONSIDERATION (financements, production, diffusion).",
+      "contact": "Nathia JEGANATHAN - JEYARAJAH",
+      "video": "https://www.youtube.com/watch?v=CXYt9ZZCPZA"
+    },
+    {
+      "name": "Lavomatic",
+      "title": "Groupe indie rock parisien",
+      "location": "Paris, France",
+      "image": "/img/artists/lavomatic.jpg",
+      "link": "#",
+      "details": [
+        "Groupe formé à Issy-les-Moulineaux en 2020. Nombreux concerts parisiens.",
+        "EP « Funny Fashion Party Life » (2023), tubes énergétiques.",
+        "Double single « No More… Lonely Nights » (2025) célébré lors d’une release party sold-out."
+      ],
+      "syn": "SYN Production accompagne le groupe sur la diffusion, le live et la stratégie globale de représentation.",
+      "contact": "Eva DUC",
+      "video": "https://www.youtube.com/watch?v=Hdz80ucAmrU"
+    }
+  ]
+  
