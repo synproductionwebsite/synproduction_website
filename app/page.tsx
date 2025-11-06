@@ -7,12 +7,25 @@ import Navbar_Responsive from "./components/Navbar_responsive";
 import CorePage from "./core/page";
 import ContactPage from "./contact/page";
 import Footer from "./components/Footer";
+import RosterPage from "./roster/page";
+import ActusPage from "./actus/page";
+import MediaPage from "./media/page";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const HomePage: React.FC = () => {
+
+  useEffect(() => {
+    AOS.init({ duration: 1000 });
+  }, []);
+
   const [isSmallScreen, setIsSmallScreen] = useState(false);
   const navbarRef = useRef<HTMLElement>(null);
 
   const contactPageRef = useRef<HTMLDivElement>(null);
+  const rosterPageRef = useRef<HTMLDivElement>(null);
+  const mediaPageRef = useRef<HTMLDivElement>(null);
+  const actusPageRef = useRef<HTMLDivElement>(null);
 
   const getNavbarHeight = () =>
     navbarRef.current ? navbarRef.current.offsetHeight : 0;
@@ -33,7 +46,7 @@ const HomePage: React.FC = () => {
 
   useEffect(() => {
     const checkWindowSize = () => {
-      setIsSmallScreen(window.innerWidth < 800);
+      setIsSmallScreen(window.innerWidth < 1500);
     };
 
     window.addEventListener("resize", checkWindowSize);
@@ -54,14 +67,25 @@ const HomePage: React.FC = () => {
         <meta name="robots" content="index, follow" />
       </Head>
 
-      {/* ✅ Image de fond fixe derrière toute la page */}
-      <div
-        className="fixed top-0 left-0 w-full h-full bg-cover bg-center bg-no-repeat bg-fixed bg-[#fffbf7] z-[-10]"
-        // style={{ backgroundImage: 'url("/img/bg/main_bg.jpeg")' }}
-      />
-
-      {/* ✅ Contenu principal */}
+      {/* Fond image qui suit la hauteur du contenu (absolute dans un conteneur relatif) */}
       <div className="relative w-full min-h-screen">
+        <div
+          className="absolute top-0 left-0 w-full h-full bg-cover bg-center bg-no-repeat bg-[#fff9f2] z-[-10]"
+          // décommente et mets ta vraie image ici si besoin
+          // style={{ backgroundImage: 'url("/img/bg/main_bg.jpeg")' }}
+        />
+
+        {/* Bandeau défilant en arrière-plan */}
+        {/* <div
+          className="absolute top-0 left-0 w-full h-full bg-repeat z-0 opacity-10"
+          style={{
+            backgroundImage: "url('/img/logo/logo_green.png')",
+            backgroundSize: "auto 200px",
+            backgroundPosition: "0 0",
+          }}
+        /> */}
+
+        {/* Contenu principal */}
         <h1
           style={{
             position: "absolute",
@@ -80,21 +104,39 @@ const HomePage: React.FC = () => {
             ref={navbarRef}
             className="sticky top-0 z-50"
             onContactClick={() => scrollToSection(contactPageRef)}
+            onRosterClick={() => scrollToSection(rosterPageRef)}
+            onMediaClick={() => scrollToSection(mediaPageRef)}
+            onActusClick={() => scrollToSection(actusPageRef)}
           />
         ) : (
           <Navbar
             ref={navbarRef}
             className="sticky top-0 z-50"
             onContactClick={() => scrollToSection(contactPageRef)}
+            onRosterClick={() => scrollToSection(rosterPageRef)}
+            onMediaClick={() => scrollToSection(mediaPageRef)}
+            onActusClick={() => scrollToSection(actusPageRef)}
           />
         )}
 
         {/* Sections */}
-        <div className="mt-25">
+        <div ref={contactPageRef} data-aos="fade-up">
           <CorePage />
         </div>
 
-        <div ref={contactPageRef}>
+        <div ref={rosterPageRef} data-aos="fade-up">
+          <RosterPage />
+        </div>
+
+        <div ref={actusPageRef} data-aos="fade-up">
+          <ActusPage />
+        </div>
+
+        <div ref={mediaPageRef} data-aos="fade-up">
+          <MediaPage />
+        </div>
+
+        <div ref={contactPageRef} data-aos="fade-up">
           <ContactPage />
         </div>
 

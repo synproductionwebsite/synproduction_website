@@ -6,10 +6,13 @@ import Image from 'next/image';
 interface NavbarProps {
   className?: string;
   onContactClick?: () => void;
+  onRosterClick?: () => void;
+  onMediaClick?: () => void;
+  onActusClick?: () => void;
 }
 
 // Définition du composant Navbar avec forwardRef
-const Navbar = forwardRef<HTMLElement, NavbarProps>(({ className, onContactClick }, ref) => {
+const Navbar = forwardRef<HTMLElement, NavbarProps>(({ className, onContactClick, onRosterClick, onMediaClick, onActusClick }, ref) => {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -72,7 +75,7 @@ const Navbar = forwardRef<HTMLElement, NavbarProps>(({ className, onContactClick
       {/* Logo centré */}
       <div className="absolute left-1/2 top-0.5 transform -translate-x-1/2 cursor-pointer">
         <Image
-          src="/img/logo/logo.png"
+          src="/img/logo/logo_purple.png"
           alt="SYN logo"
           width={scrolled ? 168 : 480}
           height={scrolled ? 48 : 160}
@@ -83,6 +86,36 @@ const Navbar = forwardRef<HTMLElement, NavbarProps>(({ className, onContactClick
 
       {/* Liens navigation */}
       <div className="text-2xl flex items-center space-x-3">
+        <a
+          href="#"
+          onClick={(e) => {
+            e.preventDefault();
+            onRosterClick?.();
+          }}
+          className="px-1 hover:text-[#675A95] transition-transform duration-300 hover:scale-110"
+        >
+          ARTISTES
+        </a>
+        <a
+          href="#"
+          onClick={(e) => {
+            e.preventDefault();
+            onActusClick?.();
+          }}
+          className="px-1 hover:text-[#675A95] transition-transform duration-300 hover:scale-110"
+        >
+          ACTUS
+        </a>
+        <a
+          href="#"
+          onClick={(e) => {
+            e.preventDefault();
+            onMediaClick?.();
+          }}
+          className="px-1 hover:text-[#675A95] transition-transform duration-300 hover:scale-110"
+        >
+          VADROUILLE
+        </a>
         <a
           href="#"
           onClick={(e) => {
