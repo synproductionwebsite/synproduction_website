@@ -120,23 +120,23 @@ const HomePage: React.FC = () => {
         )}
 
         {/* Sections */}
-        <div ref={contactPageRef} data-aos="fade-up">
+        <div ref={contactPageRef}>
           <CorePage />
         </div>
 
-        <div ref={rosterPageRef} data-aos="fade-up">
+        <div ref={rosterPageRef}>
           <RosterPage />
         </div>
 
-        <div ref={actusPageRef} data-aos="fade-up">
+        <div ref={actusPageRef}>
           <ActusPage />
         </div>
 
-        <div ref={mediaPageRef} data-aos="fade-up">
+        <div ref={mediaPageRef}>
           <MediaPage />
         </div>
 
-        <div ref={contactPageRef} data-aos="fade-up">
+        <div ref={contactPageRef}>
           <ContactPage />
         </div>
 

@@ -81,14 +81,14 @@ const MediaPage = () => {
 
       {/* Contenu principal */}
       <div className="bg-[#fff9f2]">
-        <h2 className="text-3xl lg:text-7xl font-extrabold pt-4 text-[#1F1F1F] text-center">
+        <h2 className="text-3xl lg:text-7xl font-extrabold pt-4 text-[#1F1F1F] text-center" data-aos="fade-up">
           SYN EN VADROUILLE
         </h2>
 
         {/* ------------------------------------------------------- */}
         {/* SECTION 1 */}
         {/* ------------------------------------------------------- */}
-        <div className="relative z-10 text-[#1F1F1F] max-w-5xl mx-auto p-6">
+        <div className="relative z-10 text-[#1F1F1F] max-w-5xl mx-auto p-6" data-aos="fade-left">
           <h3 className="lg:text-5xl">Festival DECOLONIZED</h3>
 
           <div className="bg-white/90 rounded-4xl font-mono text-justify p-4 mt-6 shadow-lg">
@@ -182,7 +182,7 @@ const MediaPage = () => {
         {/* ------------------------------------------------------- */}
         {/* SECTION 2 */}
         {/* ------------------------------------------------------- */}
-        <div className="relative z-10 text-[#1F1F1F] max-w-5xl mx-auto p-6">
+        <div className="relative z-10 text-[#1F1F1F] max-w-5xl mx-auto p-6" data-aos="fade-right">
           <h3 className="lg:text-5xl">
             Découverte du batik : notre étendard en cinghalais
           </h3>
@@ -275,7 +275,7 @@ const MediaPage = () => {
         {/* ------------------------------------------------------- */}
         {/* SECTION 3 */}
         {/* ------------------------------------------------------- */}
-        <div className="relative z-10 text-[#1F1F1F] max-w-5xl mx-auto p-6">
+        <div className="relative z-10 text-[#1F1F1F] max-w-5xl mx-auto p-6" data-aos="fade-left">
           <h3 className="lg:text-5xl">
             Tampons et précision, l&apos;art de la linogravure
           </h3>

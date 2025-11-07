@@ -2,37 +2,30 @@
 
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
-import { X } from "lucide-react";
+import { X, CirclePlus } from "lucide-react";
 import artists from "../../public/data/artists.json";
 import AOS from "aos";
+import Modal from "../components/Modal";
 import "aos/dist/aos.css";
-
-// type Artist = {
-//   name: string;
-//   title: string;
-//   location?: string;
-//   image: string;
-//   link?: string;
-//   label?: string;
-//   details?: React.ReactNode[];
-//   contact?: string;
-//   syn: string;
-//   video?: string;
-//   poster?: string;
-// };
 
 type Rotation = { x: number; y: number };
 
 const RosterPage = () => {
-  const [baseRotations, setBaseRotations] = useState<{ [key: number]: Rotation }>({});
-  const [hoverRotations, setHoverRotations] = useState<{ [key: number]: Rotation }>({});
-  // const [selectedIndex, setSelectedIndex] = useState<number | null>(null); // clicked card
-  const [modalIndex, setModalIndex] = useState<number | null>(null); // modal opened
+  const [baseRotations, setBaseRotations] = useState<{ [key: number]: Rotation }>(
+    {}
+  );
+  const [hoverRotations, setHoverRotations] = useState<{ [key: number]: Rotation }>(
+    {}
+  );
 
+  const [modalIndex, setModalIndex] = useState<number | null>(null);
+
+  // AOS
   useEffect(() => {
     AOS.init({ duration: 1000 });
   }, []);
 
+  // Generate random rotations
   useEffect(() => {
     const newBaseRotations: { [key: number]: Rotation } = {};
     artists.forEach((_, index) => {
@@ -45,7 +38,10 @@ const RosterPage = () => {
     setHoverRotations(newBaseRotations);
   }, []);
 
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>, index: number) => {
+  const handleMouseMove = (
+    e: React.MouseEvent<HTMLDivElement>,
+    index: number
+  ) => {
     const card = e.currentTarget;
     const rect = card.getBoundingClientRect();
     const x = e.clientX - rect.left;
@@ -69,12 +65,7 @@ const RosterPage = () => {
     }));
   };
 
-  // Open Modal
-  const openModal = (index: number) => {
-    setModalIndex(index);
-  };
-
-  // Close Modal
+  const openModal = (index: number) => setModalIndex(index);
   const closeModal = () => setModalIndex(null);
 
   function getYouTubeEmbedUrl(url: string): string | null {
@@ -113,54 +104,75 @@ const RosterPage = () => {
       />
 
       <div className="relative z-10 max-w-[1300px] mx-auto px-4">
-        <h2 className="text-3xl lg:text-7xl font-extrabold pt-4 mb-8">ARTISTES</h2>
+        <h2 className="text-3xl lg:text-7xl font-extrabold pt-4 mb-8" data-aos="fade-up">ARTISTES</h2>
 
         {/* Cards */}
         <div className="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 justify-center">
-          {artists.map((artist, index) => (
-            <button
-              key={index}
-              onClick={() => openModal(index)}
-              className="focus:outline-none"
-            >
-              <div data-aos="flip-left" className="relative w-full max-w-xs h-[360px] mx-auto group perspective-[1000px]">
-                <div
-                  className="transition-transform duration-200 ease-out transform rounded-lg w-full h-full shadow-lg"
-                  onMouseMove={(e) => handleMouseMove(e, index)}
-                  onMouseLeave={() => handleMouseLeave(index)}
-                  style={{
-                    transform: `rotateX(${hoverRotations[index]?.x ?? 0}deg) rotateY(${hoverRotations[index]?.y ?? 0}deg)`,
-                    boxShadow:
-                      "0 8px 20px rgba(0,0,0,0.7), 0 15px 25px rgba(44, 93, 50, 0.4)",
-                  }}
-                >
-                  <div className="relative w-full h-[320px] rounded-lg overflow-hidden">
-                    <Image
-                      src={artist.image}
-                      alt={artist.name}
-                      fill
-                      className="object-cover rounded-lg"
-                    />
-                  </div>
-                  <div className="absolute bottom-0 w-full rounded-b-lg px-4 py-4 backdrop-blur-sm bg-gradient-to-t from-[rgba(44,93,50,0.7)] to-[rgba(44,93,50,0.3)] group-hover:bg-[rgba(44,93,50,0.85)]">
-                    <h3 className="text-xl font-semibold text-white drop-shadow-md">
-                      {artist.name}
-                    </h3>
-                    <p className="text-sm font-black text-[#d6e7d1] drop-shadow-md">
-                      {artist.title}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </button>
-          ))}
+        {artists.map((artist, index) => (
+  <div
+    key={index}
+    data-aos="flip-left"
+    className="relative w-full max-w-xs h-[360px] mx-auto group perspective-[1000px] cursor-pointer"
+    onClick={() => openModal(index)} // toute la carte cliquable
+  >
+    <div
+      className="transition-transform duration-200 ease-out transform rounded-lg w-full h-full shadow-lg"
+      onMouseMove={(e) => handleMouseMove(e, index)}
+      onMouseLeave={() => handleMouseLeave(index)}
+      style={{
+        transform: `rotateX(${hoverRotations[index]?.x ?? 0}deg) rotateY(${hoverRotations[index]?.y ?? 0}deg)`,
+        boxShadow: "0 8px 20px rgba(0,0,0,0.7), 0 15px 25px rgba(44, 93, 50, 0.4)",
+      }}
+    >
+      {/* IMAGE */}
+      <div className="relative w-full h-[320px] rounded-lg overflow-hidden">
+        <Image
+          src={artist.image}
+          alt={artist.name}
+          fill
+          className="object-cover rounded-lg"
+        />
+      </div>
+
+      {/* TEXTE */}
+      <div className="absolute bottom-0 w-full rounded-b-lg px-4 py-4 backdrop-blur-sm bg-gradient-to-t from-[rgba(44,93,50,0.7)] to-[rgba(44,93,50,0.3)] group-hover:bg-[rgba(44,93,50,0.85)]">
+        <h3 className="text-xl font-semibold text-white drop-shadow-md">
+          {artist.name}
+        </h3>
+        <p className="text-sm font-black text-[#d6e7d1] drop-shadow-md">
+          {artist.title}
+        </p>
+      </div>
+
+      {/* BOUTON CIRCLEPLUS FLOTTANT */}
+      <div className="absolute bottom-4 right-4">
+        <CirclePlus
+          className="
+            w-10 h-10 p-2 
+            bg-green-700 text-white rounded-full 
+            shadow-lg hover:bg-green-800 hover:scale-110 
+            transition-transform duration-200 cursor-pointer
+          "
+        />
+      </div>
+    </div>
+  </div>
+))}
+
         </div>
       </div>
 
-      {/* MODAL */}
       {modalIndex !== null && (
-        <div className="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex justify-center items-center p-4">
-          <div className="relative bg-black/90 border border-green-900 p-6 max-w-4xl w-full rounded-lg overflow-y-auto max-h-[90vh]">
+      <Modal>
+        <div
+          className="fixed inset-0 bg-black/70 backdrop-blur-sm z-[999] flex justify-center items-center p-4"
+          onClick={closeModal}
+        >
+          <div
+            className="relative bg-black/90 border border-green-900 p-6 max-w-4xl w-full rounded-lg overflow-y-auto max-h-[90vh]"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* CROIX EN HAUT */}
             <button className="absolute top-4 right-4" onClick={closeModal}>
               <X className="text-white hover:text-green-400" />
             </button>
@@ -173,17 +185,21 @@ const RosterPage = () => {
                     <h3 className="text-2xl font-bold text-white">{artist.name}</h3>
                     {artist.title && <p className="mb-2">{artist.title}</p>}
                     {artist.location && (
-                      <p className="text-sm text-green-200 italic mb-2">{artist.location}</p>
+                      <p className="text-sm text-green-200 italic mb-2">
+                        {artist.location}
+                      </p>
                     )}
 
-                    {artist.details?.map((detail, i) => (
+                    {artist.details?.map((detail: any, i: number) => (
                       <p key={i} className="mt-4 text-white leading-relaxed">
                         {detail}
                       </p>
                     ))}
 
                     {artist.syn && (
-                      <p className="mt-4 text-green-300 italic text-sm">{artist.syn}</p>
+                      <p className="mt-4 text-green-300 italic text-sm">
+                        {artist.syn}
+                      </p>
                     )}
 
                     {artist.contact && (
@@ -191,6 +207,16 @@ const RosterPage = () => {
                         Contact : <span className="font-bold">{artist.contact}</span>
                       </p>
                     )}
+
+                    {/* BOUTON FERMER EN BAS */}
+                    <div className="text-center mt-6">
+                      <button
+                        onClick={closeModal}
+                        className="px-6 py-2 bg-green-700 text-white rounded-xl hover:bg-green-800 transition"
+                      >
+                        Fermer
+                      </button>
+                    </div>
                   </div>
 
                   {artist.poster ? (
@@ -219,7 +245,9 @@ const RosterPage = () => {
             })()}
           </div>
         </div>
-      )}
+      </Modal>
+    )}
+
     </div>
   );
 };

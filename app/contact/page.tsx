@@ -6,7 +6,7 @@ import Image from "next/image";
 const ContactPage = () => {
   return (
     <div className="max-w-3xl mx-auto p-8 text-center text-gray-900">
-      <h2 className="text-3xl lg:text-7xl font-bold tracking-wide mb-3">CONTACTS</h2>
+      <h2 className="text-3xl lg:text-7xl font-bold tracking-wide mb-3" data-aos="fade-up">CONTACTS</h2>
 
       <div className="flex flex-col items-center md:flex-row md:items-center md:justify-center gap-8">
         <div
@@ -55,15 +55,15 @@ const ContactPage = () => {
               <Image
                 src="/img/icon/instagram_purple.png"
                 alt="Instagram Icon"
-                width={30}
-                height={30}
+                width={50}
+                height={50}
                 className="rounded-md transition-opacity duration-300"
               />
               <Image
                 src="/img/icon/instagram_white.png"
                 alt="Instagram Icon Hover"
-                width={30}
-                height={30}
+                width={50}
+                height={50}
                 className="absolute top-0 left-0 rounded-md opacity-0 transition-opacity duration-300 hover:opacity-100"
               />
             </a>
@@ -78,15 +78,15 @@ const ContactPage = () => {
               <Image
                 src="/img/icon/tiktok_purple.png"
                 alt="TikTok Icon"
-                width={30}
-                height={30}
+                width={50}
+                height={50}
                 className="rounded-md transition-opacity duration-300"
               />
               <Image
                 src="/img/icon/tiktok_white.png"
                 alt="TikTok Icon Hover"
-                width={30}
-                height={30}
+                width={50}
+                height={50}
                 className="absolute top-0 left-0 rounded-md opacity-0 transition-opacity duration-300 hover:opacity-100"
               />
             </a>
@@ -101,15 +101,15 @@ const ContactPage = () => {
               <Image
                 src="/img/icon/linkedin_purple.png"
                 alt="LinkedIn Icon"
-                width={30}
-                height={30}
+                width={50}
+                height={50}
                 className="rounded-md transition-opacity duration-300"
               />
               <Image
                 src="/img/icon/linkedin_white.png"
                 alt="LinkedIn Icon Hover"
-                width={30}
-                height={30}
+                width={50}
+                height={50}
                 className="absolute top-0 left-0 rounded-md opacity-0 transition-opacity duration-300 hover:opacity-100"
               />
             </a>
@@ -124,15 +124,15 @@ const ContactPage = () => {
               <Image
                 src="/img/icon/facebook_purple.png"
                 alt="Facebook Icon"
-                width={30}
-                height={30}
+                width={50}
+                height={50}
                 className="rounded-md transition-opacity duration-300"
               />
               <Image
                 src="/img/icon/facebook_white.png"
                 alt="Facebook Icon Hover"
-                width={30}
-                height={30}
+                width={50}
+                height={50}
                 className="absolute top-0 left-0 rounded-md opacity-0 transition-opacity duration-300 hover:opacity-100"
               />
             </a>
