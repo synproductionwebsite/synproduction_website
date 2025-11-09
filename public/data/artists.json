@@ -14,20 +14,6 @@
       "video": "https://youtu.be/cmtglxtHvzI?si=nMPNnRTNgaNjdMjt"
     },
     {
-      "name": "DANAÉ AKKARI",
-      "title": "Cinéaste",
-      "location": "Paris",
-      "image": "/img/artists/danae.png",
-      "link": "#",
-      "poster": "/img/artists/danae2.png",
-      "details": [
-        "« Le chant du bouc » est un projet documentaire autofictionnel qui explore la question de la mémoire : celle qui se transmet, s'oublie, reste, se construit. À la fois intime et collectif.",
-        "Pour construire ce documentaire, Danaé Akkari souhaite partir à la rencontre des diasporas algériennes, dans un road-movie subjectif."
-      ],
-      "syn": "SYN Production accompagne Danaé Akkari dans le développement, la création et la réalisation du film.",
-      "contact": "Nathia JEGANATHAN - JEYARAJAH"
-    },
-    {
       "name": "ALISSASILA",
       "title": "Compositrice, pédagogue et poétesse",
       "location": "Paris",
@@ -69,6 +55,20 @@
       "syn": "SYN Production accompagne le groupe sur la diffusion, le live et la stratégie globale de représentation.",
       "contact": "Eva DUC",
       "video": "https://www.youtube.com/watch?v=Hdz80ucAmrU"
+    },
+    {
+      "name": "DANAÉ AKKARI",
+      "title": "Cinéaste",
+      "location": "Paris",
+      "image": "/img/artists/danae.png",
+      "link": "#",
+      "poster": "/img/artists/danae2.png",
+      "details": [
+        "« Le chant du bouc » est un projet documentaire autofictionnel qui explore la question de la mémoire : celle qui se transmet, s'oublie, reste, se construit. À la fois intime et collectif.",
+        "Pour construire ce documentaire, Danaé Akkari souhaite partir à la rencontre des diasporas algériennes, dans un road-movie subjectif."
+      ],
+      "syn": "SYN Production accompagne Danaé Akkari dans le développement, la création et la réalisation du film.",
+      "contact": "Nathia JEGANATHAN - JEYARAJAH"
     }
   ]
   

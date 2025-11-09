@@ -182,6 +182,86 @@ const MediaPage = () => {
         {/* ------------------------------------------------------- */}
         {/* SECTION 2 */}
         {/* ------------------------------------------------------- */}
+        <div className="relative z-10 text-[#1F1F1F] max-w-5xl mx-auto p-6" data-aos="fade-left">
+          <h3 className="lg:text-5xl">
+            Tampons et précision, l&apos;art de la linogravure
+          </h3>
+
+          <div className="bg-white/90 rounded-4xl font-mono text-justify p-4 mt-6 shadow-lg">
+            <p>
+              Atelier linogravure avec l&apos;artiste Marilyn Depagne…
+            </p>
+          </div>
+
+          <div className="mt-4">
+            {isMobile ? (
+              <Swiper
+                slidesPerView={1}
+                spaceBetween={16}
+                autoplay={{ delay: 2500, disableOnInteraction: false }}
+                pagination={{ clickable: true }}
+                modules={[Autoplay, Pagination]}
+              >
+                {gallery2.map((item, i) => (
+                  <SwiperSlide key={i}>
+                    {item.type === "image" ? (
+                      <Image
+                        src={item.src}
+                        alt=""
+                        width={500}
+                        height={500}
+                        className="rounded-2xl w-full h-[400px] object-cover shadow-md"
+                      />
+                    ) : (
+                      <video
+                        autoPlay
+                        loop
+                        muted
+                        className="rounded-2xl w-full h-[400px] object-cover shadow-md"
+                      >
+                        <source src={item.src} type="video/mp4" />
+                      </video>
+                    )}
+                  </SwiperSlide>
+                ))}
+              </Swiper>
+            ) : (
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="flex flex-col gap-4 h-[500px]">
+                  <div className="rounded-2xl overflow-hidden shadow-md h-[50%]">
+                    <Image
+                      src="/img/media/tempon1.jpg"
+                      alt=""
+                      width={500}
+                      height={500}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div className="rounded-2xl overflow-hidden shadow-md h-[50%]">
+                    <video autoPlay loop muted className="w-full h-full object-cover">
+                      <source src="/video/media/tempon.mp4" type="video/mp4" />
+                    </video>
+                  </div>
+                </div>
+
+                <div className="flex flex-col gap-4 h-[500px] rounded-2xl">
+                  <video
+                    autoPlay
+                    loop
+                    muted
+                    className="w-full h-full object-cover rounded-2xl"
+                  >
+                    <source src="/video/media/lino.mp4" type="video/mp4" />
+                  </video>
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
+        
+        {/* ------------------------------------------------------- */}
+        {/* SECTION 3 */}
+        {/* ------------------------------------------------------- */}
         <div className="relative z-10 text-[#1F1F1F] max-w-5xl mx-auto p-6" data-aos="fade-right">
           <h3 className="lg:text-5xl">
             Découverte du batik : notre étendard en cinghalais
@@ -266,86 +346,6 @@ const MediaPage = () => {
                     height={500}
                     className="w-full h-full object-cover"
                   />
-                </div>
-              </div>
-            )}
-          </div>
-        </div>
-
-        {/* ------------------------------------------------------- */}
-        {/* SECTION 3 */}
-        {/* ------------------------------------------------------- */}
-        <div className="relative z-10 text-[#1F1F1F] max-w-5xl mx-auto p-6" data-aos="fade-left">
-          <h3 className="lg:text-5xl">
-            Tampons et précision, l&apos;art de la linogravure
-          </h3>
-
-          <div className="bg-white/90 rounded-4xl font-mono text-justify p-4 mt-6 shadow-lg">
-            <p>
-              Atelier linogravure avec l&apos;artiste Marilyn Depagne…
-            </p>
-          </div>
-
-          <div className="mt-4">
-            {isMobile ? (
-              <Swiper
-                slidesPerView={1}
-                spaceBetween={16}
-                autoplay={{ delay: 2500, disableOnInteraction: false }}
-                pagination={{ clickable: true }}
-                modules={[Autoplay, Pagination]}
-              >
-                {gallery2.map((item, i) => (
-                  <SwiperSlide key={i}>
-                    {item.type === "image" ? (
-                      <Image
-                        src={item.src}
-                        alt=""
-                        width={500}
-                        height={500}
-                        className="rounded-2xl w-full h-[400px] object-cover shadow-md"
-                      />
-                    ) : (
-                      <video
-                        autoPlay
-                        loop
-                        muted
-                        className="rounded-2xl w-full h-[400px] object-cover shadow-md"
-                      >
-                        <source src={item.src} type="video/mp4" />
-                      </video>
-                    )}
-                  </SwiperSlide>
-                ))}
-              </Swiper>
-            ) : (
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div className="flex flex-col gap-4 h-[500px]">
-                  <div className="rounded-2xl overflow-hidden shadow-md h-[50%]">
-                    <Image
-                      src="/img/media/tempon1.jpg"
-                      alt=""
-                      width={500}
-                      height={500}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <div className="rounded-2xl overflow-hidden shadow-md h-[50%]">
-                    <video autoPlay loop muted className="w-full h-full object-cover">
-                      <source src="/video/media/tempon.mp4" type="video/mp4" />
-                    </video>
-                  </div>
-                </div>
-
-                <div className="flex flex-col gap-4 h-[500px] rounded-2xl">
-                  <video
-                    autoPlay
-                    loop
-                    muted
-                    className="w-full h-full object-cover rounded-2xl"
-                  >
-                    <source src="/video/media/lino.mp4" type="video/mp4" />
-                  </video>
                 </div>
               </div>
             )}
